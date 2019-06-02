@@ -27,7 +27,7 @@ foreach($mentors as $mentor){
                 <h6 class="mentor-num">Number of Apprentice</h6>
                 <span>10</span>
                 <hr>
-                <p class="mt-3"><a href="../developers/profile.php?id='.$mentor->user_id.'" class="mentor-profile">View Profile</a></p>
+                <p class="mt-3"><a href="../developers/profile.php?id='.$mentor->id.'" class="mentor-profile">View Profile</a></p>
             </div>
         </div>
     </div>
