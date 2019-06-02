@@ -2,7 +2,8 @@
 
 session_start();
 
-$_SESSION = array();
+// Supposed to unset all of the session variables
+//$_SESSION = array();
 
 session_destory();
 

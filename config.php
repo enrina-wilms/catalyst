@@ -7,6 +7,7 @@
     define ("INCLUDES_EXPERIENCE_PATH", realpath('../../includes/experience'));
     define ("INCLUDES_EDUCATION_PATH", realpath('../../includes/education'));
     define ("INCLUDES_DEVELOPER_PATH", realpath('../../includes/developers'));
+    define ("INCLUDES_LOGIN_PATH", realpath('../../includes/login'));
 
     
     //models
@@ -14,6 +15,7 @@
     define ("MODELS_PROFILE_PATH", realpath('../../models/profile'));
     define ("MODELS_EXPERIENCE_PATH", realpath('../../models/experience'));
     define ("MODELS_EDUCATION_PATH", realpath('../../models/education'));
+    define ("MODELS_LOGIN_PATH", realpath('../../models/login'));
     //css
     define ("CSS_PATH", realpath('../../css/'));
     define ("CSS_PATH1", realpath('../css/'));
