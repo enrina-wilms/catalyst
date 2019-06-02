@@ -45,6 +45,21 @@ a:hover{
 	background: #c0392b;
 	border-radius: 2px;
 }
+/*====================================== MENTORSHIP ======================================================*/
+.mentor-title{
+	font-size: 18px;
+}
+.mentor-gray{
+	color: darkgray;
+}
+.mentor-num{
+	font-size: 20px;
+	font-weight: 1000;
+}
+.mentor-profile{
+	font-weight: 1000;
+	color: #c0392b;
+}
 
 /*==============================MAIN============================================================*/
 /*

@@ -42,7 +42,7 @@ require_once "../../config.php";
 							<a class="nav-link" href="../homepage/homepage.php">home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">mentorship</a>
+							<a class="nav-link" href="../mentorship/mentorship.php">mentorship</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="../developers/developers.php">developers</a>
