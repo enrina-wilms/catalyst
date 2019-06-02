@@ -8,18 +8,24 @@ $mentors = new Mentors();
 $mentors = $mentors->listAllMentor($dbcon);
 
 foreach($mentors as $mentor){
+    $fName = $mentor->fname;
+	$lName = $mentor->lname;
+	
+	$firstChar = mb_substr($fName, 0, 1, "UTF-8");
+    $secChar = mb_substr($lName, 0, 1, "UTF-8");
+    
     echo
     '<div class="col-md-3 mt-4">
         <div class="card text-center">
             <div class="card-header main-left-sidebar-header">
                 <div class="dev-profile-contatiner" style="margin:0 auto;top:30px;">
                     <div class="profile-avatar-circle">
-                        <span class="profile-initials">KM</span>
+                        <span class="profile-initials">'.$firstChar.$secChar.'</span>
                     </div>
                 </div>	
             </div>
             <div class="card-body text-center">
-                <h4>'.$mentor->fname. ' '. $mentor->lname.'</h4>
+                <h3>'.ucfirst($mentor->fname). ' '. ucfirst($mentor->lname).'</h3>
                 <p class="mt-n1 mb-3 mentor-title">'.$mentor->position.'</p>
                 <p class="mb-2"><a href="#" class="mentor-gray">Become my Apprentice</a></p>
                 <a href="#" class="mentor-gray">Message</a>

@@ -47,7 +47,9 @@ a:hover{
 }
 /*====================================== MENTORSHIP ======================================================*/
 .mentor-title{
-	font-size: 18px;
+	font-size: 14px;
+	color: gray;
+	text-transform: uppercase;
 }
 .mentor-gray{
 	color: darkgray;
