@@ -29,9 +29,9 @@ class user
         $sql = "INSERT INTO users(email, password)
                 VALUES(:email, :password)";
         $pdost = $db->prepare($sql);
-        $pdost = bindParam(':email', $email);
+        $pdost->bindParam(':email', $email);
         $enc_password = password_hash($password);
-        $pdost = bindParam(':password', $enc_password);
+        $pdost->bindParam(':password', $enc_password);
         $count = $pdost->execute();
         return $count;
     }
