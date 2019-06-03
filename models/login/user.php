@@ -30,7 +30,8 @@ class user
                 VALUES(:email, :password)";
         $pdost = $db->prepare($sql);
         $pdost = bindParam(':email', $email);
-        $pdost = bindParam(':password', $password);
+        $enc_password = password_hash($password);
+        $pdost = bindParam(':password', $enc_password);
         $count = $pdost->execute();
         return $count;
     }
@@ -57,6 +58,12 @@ class user
     }
     public function updateUser($id, $email, $password, $db){
         $sql = "UPDATE users SET email = :email, password = :password WHERE id = :id";
+        $pdost = $db->prepare($sql);
+        $pdost->bindParam(':email', $email);
+        $enc_password = password_hash($password);
+        $pdost->bindParam(':password', $enc_password);
+        $count = $pdost->execute();
+        return $count;
     }
 }
 

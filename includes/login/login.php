@@ -1,6 +1,11 @@
 <?php
 
 session_start();
+require_once '../../config.php';
+
+require_once MODELS_PATH . "/database.php";
+require_once MODELS_LOGIN_PATH . "/user.php";
+
 
 
 
