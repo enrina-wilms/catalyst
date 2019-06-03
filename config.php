@@ -8,6 +8,7 @@
     define ("INCLUDES_EDUCATION_PATH", realpath('../../includes/education'));
     define ("INCLUDES_DEVELOPER_PATH", realpath('../../includes/developers'));
     define ("INCLUDES_LOGIN_PATH", realpath('../../includes/login'));
+    define ("INCLUDES_VALIDATION_PATH", realpath('../../includes/validation'));
 
     
     //models

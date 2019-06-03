@@ -77,11 +77,11 @@ class Profile
 				  	  lname = :lname,
 					  email = :email,
 					  contact = :contact,
-					  image = :image
-					  location = :location
-					  position = :position
-					  portfolio_url = :portfolio_url
-					  mentorship_status = :mentorship_status
+					  image = :image,
+					  location = :location,
+					  position = :position,
+					  portfolio_url = :portfolio_url,
+					  mentorship_status = :mentorship_status,
 					  user_id = :user_id
 				  WHERE id = :id";
 		
@@ -122,6 +122,7 @@ class Profile
 		$query = "SELECT * FROM profiles WHERE user_id = :user_id";
 		
 		$pdost = $db->prepare($query);
+		$pdost->bindParam(':user_id', $id);
 
 		$profile = $pdost->execute();
 		
