@@ -21,8 +21,8 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 	//*********STATUS***********/
 	$s = new Status();
-	$user_id=6;
-	$statuss =  $s->getStatusByProfileId($user_id, $db);
+	$profile_id=6;
+	$statuss =  $s->getStatusByProfileId($profile_id, $db);
 	
 
 
