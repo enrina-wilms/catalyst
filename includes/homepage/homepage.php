@@ -6,7 +6,7 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 
 
 
-	$query = "SELECT * FROM profiles WHERE user_id = 9";
+	$query = "SELECT * FROM profiles WHERE user_id = 3";
 		
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);

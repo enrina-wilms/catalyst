@@ -10,7 +10,7 @@ if(isset($_POST['update'])) {
 	
 	$db = Database::getDb();
 	$profileObj = new Profile();
-	$update = $profileObj->getProfileById($id, $db);
+	$update = $profileObj->userProfile($id, $db);
 }
 
 if(isset($_POST['updateProfile'])) {
@@ -44,7 +44,7 @@ if(isset($_POST['updateProfile'])) {
 		
 	$db = Database::getDb();
 	$profileObj = new Profile();
-	$update = $profileObj->updateProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db);
+	$update = $profileObj->updateProfile(9,$fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db);
 
 	if($update) {
 		//DISPLAY STATUS
@@ -73,31 +73,31 @@ if(isset($_POST['updateProfile'])) {
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="fname">First Name></label>
-					<input type="text" class="form-control" id="fname" name="fname" class="fname" placeholder="First Name">
+					<input type="text" class="form-control" id="fname" name="fname" class="fname" placeholder="<?= $update->fname; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="lname">Last Name</label>
-					<input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+					<input type="text" class="form-control" id="lname" name="lname" placeholder="<?= $update->lname; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="ex email@gmail.com">
+					<input type="email" class="form-control" id="email" name="email" placeholder="<?= $update->email; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="phone">Phone</label>
-					<input type="phone" class="form-control" id="phone" name="phone" placeholder="ex. (000) - 000 - 0000">
+					<input type="phone" class="form-control" id="phone" name="phone" placeholder="<?= $update->contact; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="location">Location</label>
-					<input type="text" class="form-control" id="location" name="location" placeholder="City, Country">
+					<input type="text" class="form-control" id="location" name="location" placeholder="<?= $update->location; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="portfolio">Position</label>
-					<input type="text" class="form-control" id="position" name="position" placeholder="www.portfolio.com">
+					<input type="text" class="form-control" id="position" name="position" placeholder="<?= $update->position; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="portfolio">Portfolio Website</label>
-					<input type="text" class="form-control" id="portfolio" name="portfolio" placeholder="www.portfolio.com">
+					<input type="text" class="form-control" id="portfolio" name="portfolio" placeholder="<?= $update->portfolio_url; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label class="labelname">Mentorship Status</label>

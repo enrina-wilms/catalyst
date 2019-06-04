@@ -14,7 +14,7 @@ echo '<div class="card-body main-cardBody">'
 . 'class="statusBtn"'
 . " />" 
 . '<button class="btn statusBtn status-actn-btn" type="submit" value="Delete Education" name="delEduc">'
-. '<i class="fas fa-pen"></i>'
+. '<i class="fas fa-trash"></i>'
 . '</button>'
 . "</form>"
 . '</div>'
@@ -25,8 +25,8 @@ echo '<div class="card-body main-cardBody">'
 //. '</div>'
 . '<p class="card-text">' . $exp->degree . ", " . $exp->field . '</p>'
 //. '<p class="card-text">' . $exp->field . '</p>'
-. '<p class="card-text">' . $sDate . " " . "-" . " " . $eDate . '</p>'
-. '<p class="card-text">' . $exp->description . '</p>'
+. '<p class="card-text" style="color:#636e72;">' . $sDate . " " . "-" . " " . $eDate . '</p>'
+. '<p class="card-text mt-1 ml-2" style="font-style:italic;color:#636e72;">' . $exp->description . '</p>'
 . '<hr>'
 . '</div>';
 

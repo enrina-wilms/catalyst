@@ -1,66 +1,95 @@
-body{
+body {
 	font-family: 'Muli', sans-serif;
 	background: #ecf0f1;
 }
+
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid red;
-    margin: 0.5em 0;
-    padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid red;
+	margin: 0.5em 0;
+	padding: 0;
 }
-a{
+
+a {
 	text-decoration: none;
 	color: #353b48;
 }
-p{
+
+p {
 	margin: 0;
 	padding: 0;
 }
-a:hover{
+
+a:hover {
 	color: #E74C3C;
 }
-.header-bg{
-	background: #e74c3c!important;
+
+.header-bg {
+	background: #e74c3c !important;
 }
-.card{
-	border:none!Important;
+
+.card {
+	border: none !Important;
 }
-.input-group-text{
-	color:black!important;
+
+.input-group-text {
+	color: black !important;
 }
-.fa-search{
-	color:black!important;
+
+.fa-search {
+	color: black !important;
 }
-.nav-link{
-	padding:5px 20px!important;
+
+.nav-link {
+	padding: 5px 20px !important;
 	font-size: 14px;
 	text-transform: capitalize;
-/*	font-weight: bold;*/
-	color: #fff!important;
+	/*	font-weight: bold;*/
+	color: #fff !important;
 	border-right: 1px solid #c0392b;
 }
-.nav-link:hover{
+
+.nav-link:hover {
 	background: #c0392b;
 	border-radius: 2px;
 }
+.card-body{
+	padding-top:0 !important;
+}
+
 /*====================================== MENTORSHIP ======================================================*/
 .mentor-title{
 	font-size: 13px;
+}
+.mentor-title {
+	font-size: 14px;
 	color: gray;
 	text-transform: uppercase;
 }
-.mentor-gray{
+
+.mentor-gray {
 	color: darkgray;
 }
-.mentor-num{
+
+.mentor-num {
 	font-size: 20px;
 	font-weight: 1000;
 }
-.mentor-profile{
+
+.mentor-profile {
 	font-weight: 1000;
 	color: #c0392b;
+}
+.error-message{
+	font-size: 14px;
+	font-style: italic;
+	color: #636e72;
+	margin: 0;
+}
+span{
+	margin: 0;
 }
 /*==============================MAIN============================================================*/
 /*
@@ -71,110 +100,136 @@ a:hover{
 	padding: 0;
 }
 */
-.main-left-sidebar-header{
-	background: #e74c3c;
+.main-left-sidebar-header {
+	padding-top: 40px;
+	background: linear-gradient(to bottom, #E74C3C 60%, #FFFFFF 40%);
+	border: none;
 }
+
 #circle {
-      width: 150px;
-      height: 150px;
-      background: #000;
-      border-radius: 50%;
-	  margin: 0 auto;
-	  border: 5px solid #fff;
+	width: 150px;
+	height: 150px;
+	background: #000;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 5px solid #fff;
 }
-.main-left-sidebar p{
-	margin-bottom: 0!important;
+
+.main-left-sidebar p {
+	margin-bottom: 0 !important;
 }
-.main-left-sidebar a{
+
+.main-left-sidebar a {
 	display: block;
 	text-decoration: none;
 }
-.main-h2{
+
+.main-h2 {
 	font-size: 30px;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin: 0;
 }
-.main-devposition, .main-location{
+
+.main-devposition,
+.main-location {
 	display: block;
 	color: #636e72;
 	text-transform: capitalize;
-	
+
 }
-.main-tablink{
+
+.main-tablink {
 	font-size: 20px;
-	color: #2d2d2d!important;
+	color: #2d2d2d !important;
 }
-.main-tablink:hover{
-	background: #E74C3C!important;
-	color: #fff!important;
-	border-top: 2px solid #2d2d2d!important;
+
+.main-tablink:hover {
+	background: #E74C3C !important;
+	color: #fff !important;
+	border-top: 2px solid #2d2d2d !important;
 }
-.main-tablink:active{
-	background: #E74C3C!important;
-	color: #fff!important;
-	border-top: 2px solid #2d2d2d!important;
+
+.main-tablink:active {
+	background: #E74C3C !important;
+	color: #fff !important;
+	border-top: 2px solid #2d2d2d !important;
 }
-.main-profile-card{
-	border-radius: none!important;
-	border-top: 5px solid #e74c3c!important;
+
+.main-profile-card {
+	border-radius: none !important;
+	border-top: 5px solid #e74c3c !important;
 	margin-bottom: 25px;
 }
-.main-button{
+
+.main-button {
 	display: inline-block;
 }
-.fa-plus, .fa-pen{
+
+.fa-plus,
+.fa-pen,
+.fa-trash{
 	font-size: 12px;
 	color: #e74c3c;
 	padding: 0;
 }
-.main-h5{
+
+.main-h5 {
 	font-weight: 600;
-	margin-bottom:0;
+	margin-bottom: 0;
 }
-.main-modal-button{
-	right:0;
+
+.main-modal-button {
+	right: 0;
 	float: right;
 	display: inline-block;
 }
-.main-cardBody{
+
+.main-cardBody {
 	padding-bottom: 0;
 }
-.main-action-button{
-	float:right;
-	top:0;
+
+.main-action-button {
+	float: right;
+	top: 0;
 	display: inline;
 }
+
 /*====================================DEVELOPERS=========================================================*/
-.row{
+.row {
 	margin: 0 auto;
 }
-.dev-container{
-	float: left!important;
+
+.dev-container {
+	float: left !important;
 	text-align: center;
-/*	margin:0 auto;*/
+	/*	margin:0 auto;*/
 	margin: 10px;
 	padding: 0;
-/*	width: 100%!important;*/
+	/*	width: 100%!important;*/
 }
+
 .dev-circle {
-      width: 80px;
-      height: 80px;
-      background: #000;
-      border-radius: 50%;
-	  margin: 0 auto;
-	  border: 5px solid #fff;
+	width: 80px;
+	height: 80px;
+	background: #000;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 5px solid #fff;
 }
-.dev-h3{
-	text-transform: capitalize;
+
+.dev-h3 {
+	text-transform:uppercase;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: center;
 	padding-top: 10px;
 }
-.dev-card-body{
+
+.dev-card-body {
 	padding-top: 0;
 }
+
 .dev-avatar-circle {
 	float: left;
 	display: inline-block;
@@ -186,6 +241,7 @@ a:hover{
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 }
+
 .dev-initials {
 	position: relative;
 	top: 12.5px;
@@ -194,16 +250,18 @@ a:hover{
 	color: #fff;
 	text-transform: lowercase;
 }
-.card-header.dev-header{
+
+.card-header.dev-header {
 	border: none;
 	background: #fff;
-	margin: 0 auto!important;
-}
-.dev-card{
-	width: 250px!important;
+	margin: 0 auto !important;
 }
 
-.profile-avatar-circle{
+.dev-card {
+	width: 250px !important;
+}
+
+.profile-avatar-circle {
 	margin: 0 auto;
 	width: 100px;
 	height: 100px;
@@ -214,6 +272,7 @@ a:hover{
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 }
+
 .profile-initials {
 	position: relative;
 	top: 25px;
@@ -222,45 +281,88 @@ a:hover{
 	color: #fff;
 	text-transform: lowercase;
 }
-.dev-profile-container{
-	top:-30px;
-	margin: 0 auto!important;
-	background-color: #2d2d2d!important;
-}
-.card-header.homepage-left-sidebar-header{
-	background: #E74C3C;
+
+.dev-profile-container {
+	top: -30px;
+	margin: 0 auto !important;
+	background-color: #2d2d2d !important;
 }
 
+.card-header.homepage-left-sidebar-header {
+	padding-top: 40px;
+	background: linear-gradient(to bottom, #E74C3C 60%, #FFFFFF 40%);
+	border: none;
+	/*	background: #E74C3C;*/
+}
+
+.dev-editBtn {
+	padding: 0;
+	font-weight: bold;
+	color: #E74C3C !important;
+}
+
+.dev-editBtn:hover {
+	color: #2d2d2d !important;
+}
+.dev-contact p{
+/*	font-weight: bold;*/
+	color: #636e72;
+}
+.dev-contact-icon{
+	color: #636e72;
+}
+.dev-contact-info{
+	color: #E74C3C;
+}
+.dev-contact-info:hover{
+	color: #2d2d2d;
+}
+.dev-required{
+	color: red;
+	font-weight: bold;
+}
+.dev-card p{
+	text-transform:capitalize;
+}
 /*=================================HOMEPAGE=====================================================*/
 
-.homepage-profile{
+.homepage-profile {
 	margin: 0 20px;
 }
-.homepage-left-sidebar, .homepagge-right-sidebar{
+
+.homepage-left-sidebar,
+.homepagge-right-sidebar {
 	padding: 0;
 }
+
 /*=====================================STATUS================================*/
-.modal-dialog{
+.modal-dialog {
 	width: 800px !important;
 }
-.form-status{
+
+.form-status {
 	display: inline-block;
 	width: 90%;
 }
-.status-modal-container{
-	width: 500px!important;
+
+.status-modal-container {
+	width: 500px !important;
 }
-.status-modal-body{
+
+.status-modal-body {
 	padding: 10px 0 0 10px;
 }
-.status-modal-footer{
-	padding-bottom:0;
+
+.status-modal-footer {
+	padding-bottom: 0;
 }
-.status-addStatus{
+
+.status-addStatus {
 	background: #FBC531;
-	border:none;
+	border: none;
 	color: #fff;
 }
+
 .status-btn {
 	background: white !important;
 	text-align: left;
@@ -302,14 +404,16 @@ a:hover{
 	display: inline-block;
 	font-size: 14px;
 }
+
 /*======================================SIDEBAR======================================================*/
-.sidebar-h5{
+.sidebar-h5 {
 	border-top: 2px solid #E74C3C;
 	background: #fff;
 	padding: 10px;
-	text-align:left;
+	text-align: left;
 }
-.sidebar-right-height{
+
+.sidebar-right-height {
 	height: 200px;
 	overflow: auto;
 }

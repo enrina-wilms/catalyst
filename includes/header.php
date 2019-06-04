@@ -31,7 +31,7 @@ require_once "../../config.php";
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<form class="form-inline my-2 my-lg-0">
 						<div class="input-group">
-							<input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+							<input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2"  style="width:300px;">
 							<div class="input-group-append">
 								<span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
 							</div>
@@ -53,15 +53,6 @@ require_once "../../config.php";
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="../userProfile/user-profile.php">My Profile</a>
-
-								<a class="dropdown-item" href="">
-									<form class="action-btn-style" action="../userProfile/edit-profile.php" method="post">
-										<input type='hidden' value="<?php echo $profileId->id; ?>" name="id" class="statusBtn" />
-										<button class="btn statusBtn status-actn-btn" type="submit" value="update Profile" name="update">Edit Profile
-										</button>
-									</form>
-								</a>
-
 								<a class="dropdown-item" href="#">Privacy Settings</a>
 								<a class="dropdown-item" href="#">Logout</a>
 							</div>

@@ -11,7 +11,7 @@ if(isset($_POST['addExperience'])) {
 	$company = $_POST['company'];
 	$start_date = $_POST['sDate'];
 	$end_date = $_POST['eDate'];
-	$profile_id = 5;
+	$profile_id = 7;
 		
 	$db = Database::getDb();
 	$experienceObj = new Experience();
