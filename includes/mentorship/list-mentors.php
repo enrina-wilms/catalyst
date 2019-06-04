@@ -25,7 +25,7 @@ foreach($mentors as $mentor){
                 </div>	
             </div>
             <div class="card-body text-center">
-                <h3>'.ucfirst($mentor->fname). ' '. ucfirst($mentor->lname).'</h3>
+                <h4>'.ucfirst($mentor->fname). ' '. ucfirst($mentor->lname).'</h4>
                 <p class="mt-n1 mb-3 mentor-title">'.$mentor->position.'</p>
                 <p class="mb-2"><a href="#" class="mentor-gray">Become my Apprentice</a></p>
                 <a href="#" class="mentor-gray">Message</a>
