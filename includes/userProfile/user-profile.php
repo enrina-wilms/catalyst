@@ -55,12 +55,25 @@ require_once MODELS_STATUS_PATH . "/status.php";
 	$secChar = mb_substr($lName, 0, 1, "UTF-8");
 
 	if(isset($_POST['update'])) {
-	$id = $_POST['id'];
-	
-	$db = Database::getDb();
-	$profileObj = new Profile();
-	$statusId = $profileObj->getProfileById($id, $db);
-}
+		$id = $_POST['id'];
+		
+		$db = Database::getDb();
+		$profileObj = new Profile();
+		$statusId = $profileObj->getProfileById($id, $db);
+	}
+
+	//Mentorship Feature
+	if(isset($_GET['mentorStatus'])){
+		$mentorStatus = $_GET['mentorStatus'];
+
+		$db = Database::getDb();
+
+		$profileObj  = new Profile();
+		$updateMentorStatus = $profileObj->updateMentorStatus($db, 3, $mentorStatus);
+
+		$referer = $_SERVER['HTTP_REFERER'];
+		header("Location: $referer");
+	}
 ?>
 
 <br>
@@ -82,7 +95,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 				</div>
 				<div class="card-body text-left dev-contact">
 					<hr>
-					<a href="#" class="">Become a Mentor</a>
+					<a href="?mentorStatus=1" class="">Become a Mentor</a>
 					<a href="#" class="">Become my Apprentice</a>
 					<a href="#" class="">Add Friend</a>
 					<a href="#" class="">Message</a>
@@ -106,7 +119,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 		<!--CENTER MAIN PROFILE-->
 		<div class="col-md-6 main-profile">
-			<h2 class="main-h2"><?= $profile->fname . " " . $profile->lname ?><span class="badge badge-pill badge-primary ml-3">Mentor</span></h2>
+			<h2 class="main-h2"><?= $profile->fname . " " . $profile->lname ?><?php if($profile->mentorship_status == 1){echo '<span class="badge badge-pill badge-primary ml-3">Mentor</span>';} ?></h2>
 			<span class="main-devposition"><?= $profile->position?></span>
 			<span class="main-location"><?= $profile->location?></span>
 			<br>

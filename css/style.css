@@ -60,6 +60,9 @@ a:hover {
 }
 
 /*====================================== MENTORSHIP ======================================================*/
+.mentor-title{
+	font-size: 13px;
+}
 .mentor-title {
 	font-size: 14px;
 	color: gray;
