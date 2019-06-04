@@ -131,4 +131,19 @@ class Profile
 		return $profile;
 		
 	}
+
+	//updating mentor status
+	public function updateMentorStatus($db, $user_id, $mentorship_status){
+		$query = "UPDATE profiles
+				  SET mentorship_status = :mentorship_status
+				  WHERE user_id = :user_id";
+
+		$pdost = $db->prepare($query);
+		$pdost->bindParam(':user_id', $user_id);
+		$pdost->bindParam(':mentorship_status' , $mentorship_status);
+
+		$status = $pdost->execute();
+		
+		return $status;
+	}
 }
