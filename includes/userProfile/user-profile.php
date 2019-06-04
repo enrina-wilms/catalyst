@@ -9,6 +9,7 @@ require_once INCLUDES_EXPERIENCE_PATH . "/add-experience.php";
 require_once INCLUDES_EXPERIENCE_PATH . "/delete-experience.php";
 require_once INCLUDES_EDUCATION_PATH . "/add-education.php";
 require_once INCLUDES_EDUCATION_PATH . "/delete-education.php";
+require_once MODELS_STATUS_PATH . "/status.php";
 
 
 	$query = "SELECT * FROM profiles WHERE user_id = 3";
@@ -17,6 +18,12 @@ require_once INCLUDES_EDUCATION_PATH . "/delete-education.php";
 	$pdost = $db->prepare($query);
 	$profile = $pdost->execute();
 	$profile = $pdost->fetch(PDO::FETCH_OBJ);
+
+	//*********STATUS***********/
+	$s = new Status();
+	$user_id=6;
+	$statuss =  $s->getStatusByProfileId($user_id, $db);
+	
 
 
 	$id = 7;
@@ -135,7 +142,10 @@ require_once INCLUDES_EDUCATION_PATH . "/delete-education.php";
 
 						</div>
 					</h5>
-
+					<?php foreach($statuss as $status){
+							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>';
+						} 
+					?>
 				</div>
 
 				<!--ABOUT TAB CONTAINER-->
