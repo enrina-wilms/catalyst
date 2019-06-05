@@ -1,3 +1,26 @@
+<?php
+require_once '../../config.php';
+require_once 'header.php';
+
+require_once MODELS_PATH . "/database.php";
+require_once MODELS_STATUS_PATH . "/status.php";
+
+$dbcon = Database::getDb();
+if(isset($_POST['addStatus'])){
+	$message=filter_var($_POST['content'], FILTER_SANITIZE_STRING);
+	//$content = $_POST['content'];
+	date_default_timezone_set("America/New_York");
+	$status_date = date("Y/m/d");
+	$status_time = date("h:i:sa");
+    $user_id=6;
+
+	$db = Database::getDb();
+    $s = new Status();
+   
+	$c = $s->addStatus($message, $status_date, $status_time, $user_id, $db);
+	//header("Location: " . $includepath ."blogs/bloglistAdmin.php");
+}
+?>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
