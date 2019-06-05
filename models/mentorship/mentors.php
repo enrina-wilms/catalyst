@@ -44,6 +44,7 @@ class Mentors{
         
         return $mentors;
     }
+    //listing mentorship request
     public function listApprenticeRequest($db, $id){
             
         $query = "SELECT * FROM profiles WHERE id = :id";
@@ -56,5 +57,31 @@ class Mentors{
         
         return $mentors;
     }
+    //lingting user apprentice
+    public function listApprentice($db, $id){
+            
+        $query = "SELECT * FROM mentors WHERE mentor = :id AND status = 'approved' ORDER BY request_date desc";
+
+        $pdost = $db->prepare($query);
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        
+        $mentors = $pdost->fetchAll(PDO::FETCH_OBJ);
+        
+        return $mentors;
+    }
+    //updating mentorship request status
+	public function updateMentorRequestStatus($db, $id, $status){
+		$query = "UPDATE mentors
+				  SET status = :status
+				  WHERE id = :id";
+
+		$pdost = $db->prepare($query);
+		$pdost->bindParam(':id', $id);
+		$pdost->bindParam(':status', $status);
+		$status = $pdost->execute();
+		
+		return $status;
+	}
 }
 

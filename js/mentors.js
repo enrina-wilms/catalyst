@@ -16,7 +16,6 @@ function apprentice_lname(name){
 function show_message(msg){
     document.getElementById("message").value = msg;
 }
-
 $('#requestForm').on('submit', function() {
 
     for (instance in CKEDITOR.instances) {

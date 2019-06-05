@@ -14,10 +14,10 @@
 							<label for="description" id="mentor-name"></label>
 							<textarea id="description" name="description" class="form-control" aria-label="With textarea" rows="6" cols="50">
                             </textarea>
-                            <input type="text" name="mentor_id" id="mentor_id">
-                            <input type="text" name="apprentice_id" id="apprentice_id">
-                            <input type="text" name="apprentice_fname" id="apprentice_fname">
-                            <input type="text" name="apprentice_lname" id="apprentice_lname">
+                            <input type="hidden" name="mentor_id" id="mentor_id">
+                            <input type="hidden" name="apprentice_id" id="apprentice_id">
+                            <input type="hidden" name="apprentice_fname" id="apprentice_fname">
+                            <input type="hidden" name="apprentice_lname" id="apprentice_lname">
 						</div>
 
 					<div class="modal-footer status-modal-footer">

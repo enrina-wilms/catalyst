@@ -11,5 +11,4 @@ include 'header.php';
     <br/><br/>
     <?php require_once 'apprentice-modal.php'; ?>
 </div>
-<script src="../../js/alertifyjs/alertify.js"></script>
 <?php require_once 'footer.php'; ?>

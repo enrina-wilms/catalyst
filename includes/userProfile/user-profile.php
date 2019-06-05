@@ -155,10 +155,12 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 						</div>
 					</h5>
-					<?php foreach($statuss as $status){
+				
+					<?php /*foreach($statuss as $status){
 							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>';
-						} 
+						} */
 					?>
+		
 				</div>
 
 				<!--ABOUT TAB CONTAINER-->
@@ -236,8 +238,8 @@ require_once MODELS_STATUS_PATH . "/status.php";
 			<!--TUTORIALS/VIDEOS ADS SIDEBAR-->
 			<div class="sidebar-right-height">
 				<h5 class="sidebar-h5">Apprentices</h5>
+				<?php require_once '../mentorship/list-user-apprentice.php'; ?>
 			</div>
-			
 		</div>
 	</div>
 </div>

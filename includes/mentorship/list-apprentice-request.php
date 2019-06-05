@@ -30,10 +30,18 @@ foreach($mentors as $mentor){
             <button type="button" onclick="show_message(\'' .$mentor->message. '\')"; class="btn btn-sm text-right pp ml-4"><i class="fas fa-envelope" data-toggle="modal" data-target="#message-modal"></i></button>
         </div>
         <div class="col-sm-4 ml-1">
-            <button type="button" class="btn btn-sm pp" data-toggle="tooltip" data-placement="top" title="Reject"><i class="fas fa-times"></i></button>
+            <form method="POST" action="../mentorship/reject-mentor-status.php">
+                <input type="hidden" name="id" value="'.$mentor->id.'">
+                <input type="hidden" name="status" value="rejected">
+                <button type="submit" name="reject" class="btn btn-sm aa" data-toggle="tooltip" data-placement="top" title="Reject"><i class="fas fa-times"></i></i></button>
+            </form>
         </div>
         <div class="col-sm-4 ml-n4">
-            <button type="button" class="btn btn-sm aa" data-toggle="tooltip" data-placement="top" title="Accept"><i class="fas fa-check"></i></button>
+            <form method="POST" action="../mentorship/accept-mentor-status.php">
+                <input type="hidden" name="id" value="'.$mentor->id.'">
+                <input type="hidden" name="status" value="approved">
+                <button type="submit" name="accept" class="btn btn-sm aa" data-toggle="tooltip" data-placement="top" title="Accept"><i class="fas fa-check"></i></button>
+            </form>
         </div>
     </div><hr/>';
 }
