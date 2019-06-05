@@ -3,11 +3,11 @@ require_once '../../models/database.php';
 require_once '../../models/mentorship/mentors.php';
 
 $dbcon = Database::getDb();
-//calling the get portfolio in the portfolio model and passing in the data and the active user id
 $mentors = new Mentors();
 $mentors = $mentors->listAllMentor($dbcon);
 
 foreach($mentors as $mentor){
+    $fullName = ucfirst($mentor->fname) .' '. ucfirst($mentor->lname);
     $fName = $mentor->fname;
 	$lName = $mentor->lname;
 	
@@ -25,9 +25,9 @@ foreach($mentors as $mentor){
                 </div>	
             </div>
             <div class="card-body text-center">
-                <h4>'.ucfirst($mentor->fname). ' '. ucfirst($mentor->lname).'</h4>
+                <a href="../developers/profile.php?id='.$mentor->id.'"><h4>'.ucfirst($mentor->fname). ' '. ucfirst($mentor->lname).'</h4></a>
                 <p class="mt-n1 mb-3 mentor-title">'.$mentor->position.'</p>
-                <p class="mb-2"><a href="#" class="mentor-gray">Become my Apprentice</a></p>
+                <a onclick="mentor_id('.$mentor->id.');mentor_name(\'' .$fullName. '\'); apprentice_id(6);" ref="javascript:void(0)"><p class="mb-2 mentor-gray" data-toggle="modal" data-target="#apprentice" data-test="test">Become my Apprentice</p></a>
                 <a href="#" class="mentor-gray">Message</a>
                 <hr>
                 <h6 class="mentor-num">Number of Apprentice</h6>

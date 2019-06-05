@@ -58,6 +58,12 @@ a:hover {
 .card-body{
 	padding-top:0 !important;
 }
+.modal-head{
+	background-color: #c0392b;
+}
+.modal-head h5, .modal-head button{
+	color: white;
+}
 
 /*====================================== MENTORSHIP ======================================================*/
 .mentor-title{
@@ -72,6 +78,10 @@ a:hover {
 .mentor-gray {
 	color: darkgray;
 }
+.mentor-gray:hover{
+	color: #c0392b;
+	cursor: pointer;
+}
 
 .mentor-num {
 	font-size: 20px;
@@ -81,6 +91,43 @@ a:hover {
 .mentor-profile {
 	font-weight: 1000;
 	color: #c0392b;
+}
+.profile-initials-mentor {
+	position: relative;
+	top: 5px;
+	font-size: 32px;
+	line-height: 15px;
+	color: #fff;
+	text-transform: lowercase;
+}
+.profile-name-mentor{
+	font-size: 19px;
+	margin-top: 13px;
+	margin-left: 5px;
+}
+.profile-avatar-circle-mentor {
+	margin: 0 auto;
+	width: 50px;
+	height: 50px;
+	background-color: #2d2d2d;
+	border: 5px solid #fff;
+	text-align: center;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+.pp{
+	font-size:16px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.aa{
+	font-size:16px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.fa-check{
+	font-size: 16px;
 }
 .error-message{
 	font-size: 14px;
