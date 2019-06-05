@@ -226,44 +226,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 			<!--FRIENDS SUGGESTION SIDEBAR-->
 			<div class="sidebar-right-height">
 				<h5 class="sidebar-h5">Mentorship Requests</h5>
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="profile-avatar-circle-mentor ml-n2">
-							<span class="profile-initials-mentor "><?php echo $firstChar . $secChar ?></span>
-						</div>
-					</div>
-					<div class="col-sm-10">
-						<h6 class="profile-name-mentor text-right">Kenneth Mendoza</h6>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-2"></div>
-					<div class="col-sm-5 text-right mt-1 mb-1 ml-1">
-						<button type="button" class="btn btn-danger btn-sm pp">Reject</button>
-					</div>
-					<div class="col-sm-5 text-left mt-1 mb-1 ml-n2">
-						<button type="button" class="btn btn-success btn-sm aa">Accept</button>
-					</div>
-				</div><hr/>
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="profile-avatar-circle-mentor ml-n2">
-							<span class="profile-initials-mentor "><?php echo $firstChar . $secChar ?></span>
-						</div>
-					</div>
-					<div class="col-sm-10">
-						<h6 class="profile-name-mentor text-right">Kenneth Mendoza</h6>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-2"></div>
-					<div class="col-sm-5 text-right mt-1 mb-1 ml-1">
-						<button type="button" class="btn btn-danger btn-sm pp">Reject</button>
-					</div>
-					<div class="col-sm-5 text-left mt-1 mb-1 ml-n2">
-						<button type="button" class="btn btn-success btn-sm aa">Accept</button>
-					</div>
-				</div><hr/>
+				<?php require_once '../mentorship/list-apprentice-request.php'; ?>
 			</div>
 
 			<!--MENTORS SUGGESTION SIDEBAR-->

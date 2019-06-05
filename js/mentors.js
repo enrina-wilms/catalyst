@@ -7,6 +7,15 @@ function apprentice_id(apprentice_id){
 function mentor_name(name){
     document.querySelector("#mentor-name").innerHTML = 'Say hi to <b>'+name+'</b>'+' and write a short description about yourself.';
 }
+function apprentice_fname(name){
+    document.getElementById("apprentice_fname").value = name;
+}
+function apprentice_lname(name){
+    document.getElementById("apprentice_lname").value = name;
+}
+function show_message(msg){
+    document.getElementById("message").value = msg;
+}
 
 $('#requestForm').on('submit', function() {
 

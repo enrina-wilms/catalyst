@@ -16,6 +16,8 @@
                             </textarea>
                             <input type="text" name="mentor_id" id="mentor_id">
                             <input type="text" name="apprentice_id" id="apprentice_id">
+                            <input type="text" name="apprentice_fname" id="apprentice_fname">
+                            <input type="text" name="apprentice_lname" id="apprentice_lname">
 						</div>
 
 					<div class="modal-footer status-modal-footer">

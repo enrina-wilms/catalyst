@@ -6,7 +6,7 @@ class Status
     //getting all status by profile
     	public function getStatusByProfileId($user_id, $db){
 		
-		$query = "SELECT * FROM statuss WHERE profile_id = :id";
+		$query = "SELECT * FROM status WHERE profile_id = :id";
 		$pdost = $db->prepare($query);
 		
 		//bindParam = Binds a parameter to the specified variable name

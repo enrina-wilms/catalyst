@@ -94,21 +94,21 @@ a:hover {
 }
 .profile-initials-mentor {
 	position: relative;
-	top: 5px;
-	font-size: 32px;
-	line-height: 15px;
+	top: 10px;
+	font-size: 20px;
+	line-height: 5px;
 	color: #fff;
 	text-transform: lowercase;
+	display: block;
 }
 .profile-name-mentor{
-	font-size: 19px;
-	margin-top: 13px;
-	margin-left: 5px;
+	font-size: 17px;
+	margin-top: 10px;
 }
 .profile-avatar-circle-mentor {
 	margin: 0 auto;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background-color: #2d2d2d;
 	border: 5px solid #fff;
 	text-align: center;
@@ -116,15 +116,19 @@ a:hover {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 }
-.pp{
-	font-size:16px;
-	padding-left: 15px;
-	padding-right: 15px;
+.fa-envelope, .fa-times, .fa-check{
+	font-size: 18px;
+	color: darkgray;
 }
-.aa{
-	font-size:16px;
+.pp{
+	font-size:12px;
 	padding-left: 12px;
 	padding-right: 12px;
+}
+.aa{
+	font-size:12px;
+	padding-left: 9px;
+	padding-right: 9px;
 }
 .fa-check{
 	font-size: 16px;
