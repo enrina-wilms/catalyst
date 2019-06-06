@@ -23,13 +23,5 @@ foreach($apprentice as $app){
             <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6 apprentice-sub-link">
-            <span class>View Profile</span>
-        </div>
-        <div class="col-sm-6 apprentice-sub-link">
-            <span>Message</span>
-        </div>
-    </div>
     <hr/>';
 }
