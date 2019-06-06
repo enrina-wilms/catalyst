@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 06, 2019 at 04:56 PM
+-- Generation Time: Jun 06, 2019 at 07:26 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -13,6 +13,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `webdev_networking`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `id` int(11) NOT NULL,
+  `sender` int(11) NOT NULL,
+  `receiver` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `sender`, `receiver`, `message`, `date`) VALUES
+(1, 6, 7, 'sup bro', '2019-06-06 13:13:05'),
+(2, 7, 6, 'not much, how are you?', '2019-06-06 13:13:05'),
+(3, 6, 7, 'test run', '2019-06-06 14:00:53'),
+(4, 6, 7, 'show now hoe', '2019-06-06 14:05:48'),
+(5, 1, 2, 'eddd', '2019-06-06 15:12:18'),
+(6, 1, 2, 'ggg', '2019-06-06 15:12:50'),
+(7, 1, 2, 'ken', '2019-06-06 15:13:02');
 
 -- --------------------------------------------------------
 
@@ -216,6 +243,12 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `date`) VALUES
 --
 
 --
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
@@ -287,6 +320,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `comments`
