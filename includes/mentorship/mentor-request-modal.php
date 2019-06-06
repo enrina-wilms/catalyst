@@ -15,7 +15,7 @@
                             </textarea>
 						</div>
 					<div class="modal-footer status-modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn-sm btn-secondary" data-dismiss="modal">Close</button>
 					</div>
 				</form>
 

@@ -64,8 +64,41 @@ a:hover {
 .modal-head h5, .modal-head button{
 	color: white;
 }
-
-/*====================================== MENTORSHIP ======================================================*/
+/*====================================== CHAT ======================================================*/
+.chat-box{
+	background-color: white;
+	height: 85vh;
+}
+.chat-users{
+	border-right: 2px solid lightgray;
+}
+.chat-user{
+	float: right;
+	background-color: lightblue;
+}
+.chat-friend{
+	float: left;
+	background-color:#C5C8CD;
+}
+.chat-user, .chat-friend{
+	padding: 5px 1em;
+	border-bottom-left-radius: 1.3em;
+	border-top-left-radius: 1.3em;
+	border-bottom-right-radius: 1.3em;
+    border-top-right-radius: 1.3em;
+}
+.chat-msg{
+	display: block;
+	font-size: 18px;
+}
+.vbottom{
+    position: relative;
+    top: 91%;
+	transform: translateY(-100%); 
+}
+.msg{
+}
+/*===================================== MENTORSHIP ======================================================*/
 .apprentice-sub-link{
 	font-size: 15px;
 	color: darkgray;

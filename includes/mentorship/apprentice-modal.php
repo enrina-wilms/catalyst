@@ -21,8 +21,8 @@
 						</div>
 
 					<div class="modal-footer status-modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-                        <button id="apprentice" name="apprentice" type="submit" class="btn btn-success createProfile-button">Send Request</button>
+                        <button type="button" class="btn-sm btn-secondary" data-dismiss="modal">Discard</button>
+                        <button id="apprentice" name="apprentice" type="submit" class="btn-sm btn-success createProfile-button">Send Request</button>
 					</div>
 				</form>
 
