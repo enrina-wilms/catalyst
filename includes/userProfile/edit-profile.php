@@ -15,36 +15,36 @@ if(isset($_POST['update'])) {
 
 if(isset($_POST['updateProfile'])) {
 	
-	if( $_FILES['image']['error'] == 0 )
-    {
-        
-        // Convert the image to a base64 string
-        $file = base64_encode( file_get_contents( $_FILES['profilePicture']['tmp_name'] ) );
-        
-    }
-    else
-    {
-        
-        $file = '';
-        
-    }
+//	if( $_FILES['image']['error'] == 0 )
+//    {
+//        
+//        // Convert the image to a base64 string
+//        $file = base64_encode( file_get_contents( $_FILES['profilePicture']['tmp_name'] ) );
+//        
+//    }
+//    else
+//    {
+//        
+//        $file = '';
+//        
+//    }
 	
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$email = $_POST['email'];
 	$contact = $_POST['phone'];
 //	$image = $_POST['profilePicture'];
-	$image = $file;
+//	$image = $file;
 	$location = $_POST['location'];
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
 //	$mentorship_status = $_POST['mentor-status'];
-	$mentorship_status = 1;
+//	$mentorship_status = 1;
 	$user_id = 1;
 		
 	$db = Database::getDb();
 	$profileObj = new Profile();
-	$update = $profileObj->updateProfile(9,$fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db);
+	$update = $profileObj->updateProfile(9,$fname, $lname, $email, $contact, $location, $position, $portfolio_url, $user_id, $db);
 
 	if($update) {
 		//DISPLAY STATUS
@@ -73,32 +73,46 @@ if(isset($_POST['updateProfile'])) {
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="fname">First Name></label>
-					<input type="text" class="form-control" id="fname" name="fname" class="fname" placeholder="<?= $update->fname; ?>">
+					<input type="text" class="form-control" id="fname" name="fname" class="fname" value="<?= $update->fname; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="lname">Last Name</label>
-					<input type="text" class="form-control" id="lname" name="lname" placeholder="<?= $update->lname; ?>">
+					<input type="text" class="form-control" id="lname" name="lname" value="<?= $update->lname; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="<?= $update->email; ?>">
+					<input type="email" class="form-control" id="email" name="email" value="<?= $update->email; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="phone">Phone</label>
-					<input type="phone" class="form-control" id="phone" name="phone" placeholder="<?= $update->contact; ?>">
+					<input type="phone" class="form-control" id="phone" name="phone" value="<?= $update->contact; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="location">Location</label>
-					<input type="text" class="form-control" id="location" name="location" placeholder="<?= $update->location; ?>">
+					<input type="text" class="form-control" id="location" name="location" value="<?= $update->location; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="portfolio">Position</label>
-					<input type="text" class="form-control" id="position" name="position" placeholder="<?= $update->position; ?>">
+					<input type="text" class="form-control" id="position" name="position" value="<?= $update->position; ?>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="portfolio">Portfolio Website</label>
-					<input type="text" class="form-control" id="portfolio" name="portfolio" placeholder="<?= $update->portfolio_url; ?>">
+					<input type="text" class="form-control" id="portfolio" name="portfolio" value="<?= $update->portfolio_url; ?>">
 				</div>
+				<div class="form-group col-md-6">
+					<label for="portfolio">Github Account</label>
+					<input type="text" class="form-control" id="github" name="github" value="<?= $update->github; ?>">
+					<span class="error-message">
+					</span>
+				</div>
+<!--
+				
+				<div class="form-group col-md-6">
+					<label for="profilePicture">Upload Profile Picture</label>
+					<input type="file" class="form-control-file" id="profilePicture" name="profilePicture">
+				</div>
+-->
+<!--
 				<div class="form-group col-md-6">
 					<label class="labelname">Mentorship Status</label>
 					<div class="inputbreak">
@@ -108,10 +122,7 @@ if(isset($_POST['updateProfile'])) {
 						</select>
 					</div>
 				</div>
-				<div class="form-group col-md-6">
-					<label for="profilePicture">Upload Profile Picture</label>
-					<input type="file" class="form-control-file" id="profilePicture" name="profilePicture">
-				</div>
+-->
 			</div>
 
 			<button id="updateProfile" name="updateProfile" type="submit" class="btn btn-dark createProfile-button">Update Profile</button>
