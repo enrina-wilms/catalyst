@@ -25,22 +25,22 @@ foreach($mentors as $mentor){
             <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
         </div>
     </div>
-    <div class="row mt-n2">
+    <div class="row">
+        <div class="col-sm-4 ">
+            <button type="button" data-toggle="modal" data-target="#message-modal" onclick="show_message(\'' .$mentor->message. '\')"; class="btn btn-sm text-right request-msg">Message</button>
+        </div>
         <div class="col-sm-4">
-            <button type="button" onclick="show_message(\'' .$mentor->message. '\')"; class="btn btn-sm text-right pp ml-4"><i class="fas fa-envelope" data-toggle="modal" data-target="#message-modal"></i></button>
-        </div>
-        <div class="col-sm-4 ml-1">
-            <form method="POST" action="../mentorship/reject-mentor-status.php">
-                <input type="hidden" name="id" value="'.$mentor->id.'">
-                <input type="hidden" name="status" value="rejected">
-                <button type="submit" name="reject" class="btn btn-sm aa" data-toggle="tooltip" data-placement="top" title="Reject"><i class="fas fa-times"></i></i></button>
-            </form>
-        </div>
-        <div class="col-sm-4 ml-n4">
             <form method="POST" action="../mentorship/accept-mentor-status.php">
                 <input type="hidden" name="id" value="'.$mentor->id.'">
                 <input type="hidden" name="status" value="approved">
-                <button type="submit" name="accept" class="btn btn-sm aa" data-toggle="tooltip" data-placement="top" title="Accept"><i class="fas fa-check"></i></button>
+                <button type="submit" name="accept" class="btn btn-sm request-accept" data-toggle="tooltip" data-placement="top" title="Accept">Accept</button>
+            </form>
+        </div>
+        <div class="col-sm-4 ml-n2">
+            <form method="POST" action="../mentorship/reject-mentor-status.php">
+                <input type="hidden" name="id" value="'.$mentor->id.'">
+                <input type="hidden" name="status" value="rejected">
+                <button type="submit" name="reject" class="btn btn-sm request-decline" data-toggle="tooltip" data-placement="top" title="Reject">Decline</button>
             </form>
         </div>
     </div><hr/>';
