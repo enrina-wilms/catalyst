@@ -65,39 +65,104 @@ a:hover {
 	color: white;
 }
 /*====================================== CHAT ======================================================*/
-.chat-box{
-	padding: 10px;
+.chat-box {
 	background-color: white;
 	height: 85vh;
 }
-.chat-users{
+
+.chat-users {
 	border-right: 2px solid lightgray;
 }
-.chat-user{
+
+.chat-user {
+	width: 60%;
 	float: right;
-	background-color: lightblue;
+	color: #fff;
+	background-color: #E74C3C;
 }
-.chat-friend{
+
+.chat-friend {
+	width: 60%;
 	float: left;
-	background-color:#C5C8CD;
+	background-color: #F1F0F0;
 }
-.chat-user, .chat-friend{
-	padding: 5px 1em;
+
+.chat-user,
+.chat-friend {
+	padding: 10px 1em;
+	border-radius: 50px;
+	/*
 	border-bottom-left-radius: 1.3em;
 	border-top-left-radius: 1.3em;
 	border-bottom-right-radius: 1.3em;
     border-top-right-radius: 1.3em;
+*/
 }
-.chat-msg{
+
+.chat-msg {
 	display: block;
-	font-size: 18px;
+	font-size: 14px;
 }
+
+/*
 .vbottom{
     position: relative;
     top: 91%;
 	transform: translateY(-100%); 
 }
-.msg{
+*/
+.msg {}
+
+.fa-paper-plane {
+	color: #fff;
+}
+
+.chat-button {
+	border-radius: 50%;
+	background: #E74C3C !important;
+}
+
+.chat-message {
+	position: relative;
+}
+
+.chat-input {
+	margin-top: 5px;
+	padding-top: 5px;
+	border-top: 1px solid #dcdde1;
+	width: 96%;
+	position: absolute;
+	bottom: 0;
+}
+
+.chat-message-container {
+	height: 90%;
+	overflow-y: scroll;
+	margin-bottom: 2px;
+}
+
+.form-control {
+	border: none;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::--moz--scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 /*===================================== MENTORSHIP ======================================================*/
 .apprentice-sub-link{

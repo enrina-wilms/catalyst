@@ -16,7 +16,12 @@ if(isset($_POST['method'])){
         }else{
             //add the messages inside the echo here
             foreach($messages as $message){
-                echo $message->message.'<br/>';
+				echo
+				'<div class="row chat-user mt-2 mb-2 mr-3">'
+				.'<span class="chat-msg">' . $message->message . '</span>'
+				.'</div>';
+				
+                //echo $message->message.'<br/>';
             }
         }
     }else if($method === 'throw'){
