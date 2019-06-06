@@ -56,22 +56,22 @@ if(isset($_POST['register'])){
                 echo $emailErr;
             }
         ?>
-    </span>
-    Password:<input class="userInput" type="text" name="password"/>
+    </span><br>
+    Password:<input class="userInput" type="password" name="password"/>
     <span id="passErr" style="color:red;">
         <?php
             if(isset($passErr)) {
                 echo $passErr;
             }
         ?>
-    </span>
-    Confirm Password:<input class="userInput" type="text" name="confirmPassword"/>
+    </span><br>
+    Confirm Password:<input class="userInput" type="password" name="confirmPassword"/>
     <span id="conPassErr" style="color:red;">
         <?php
             if(isset($conPassErr)) {
                 echo $conPassErr;
             }
         ?>
-    </span>
+    </span><br>
     <input id="userSubmit" type="submit" name="register" value="Register">
 </form>

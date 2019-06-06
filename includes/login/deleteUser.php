@@ -11,6 +11,6 @@ if(isset($_POST['delete'])){
     $count = $delUser->deleteUser($id, $db);
 
     if($count){
-        header("Location: "); /*********************** location? */
+        header("Location: userAdmin.php"); /*********************** location? */
     }
 }

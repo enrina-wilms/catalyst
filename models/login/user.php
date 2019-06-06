@@ -2,7 +2,6 @@
 
 class user
 {
-
     public function approveAdmin($role, $id, $db){
         $sql = "UPDATE users SET role = :role where id = :id";
         $pdost = $db->prepare($sql);
@@ -12,25 +11,28 @@ class user
         return $count;
     }
     public function login($email, $password, $db){
-        $sql = "SELECT id FROM users WHERE email = :email AND password=:password";
+        $sql = "SELECT id,password FROM users WHERE email = :email AND password=:password";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(":email", $email);
-        $enc_password = password_hash($password);
-        $pdost->bindParam(":password", $enc_password);
         $pdost->execute();
-        if ($pdost->rowCount() > 0) {
+
+        //echo  password_hash($password, 1);
+
+        if ($pdost->rowCount() > 0) { //0 or 1 boolean value
             $result = $pdost->fetch(PDO::FETCH_OBJ);
-            return $result->id;
+            if(password_verify($password,$result->password){
+                
+            }
         } else {
             return false;
         }
     }
-    public function addUser($email, $password, $db){// where do I put password hash
+    public function addUser($email, $password, $db){
         $sql = "INSERT INTO users(email, password)
                 VALUES(:email, :password)";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(':email', $email);
-        $enc_password = password_hash($password);
+        $enc_password = password_hash($password, 1);
         $pdost->bindParam(':password', $enc_password);
         $count = $pdost->execute();
         return $count;
@@ -60,7 +62,7 @@ class user
         $sql = "UPDATE users SET email = :email, password = :password WHERE id = :id";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(':email', $email);
-        $enc_password = password_hash($password);
+        $enc_password = password_hash($password, 1);
         $pdost->bindParam(':password', $enc_password);
         $count = $pdost->execute();
         return $count;

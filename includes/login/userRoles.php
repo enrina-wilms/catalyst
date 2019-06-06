@@ -13,7 +13,7 @@ if(isset($_POST['user'])){
     $count = $userRole->approveAdmin($role, $id, $db);
 
     if($count){
-        header("Location: "); /*********************** location? */
+        header("Location: userAdmin.php"); 
     }else{
         echo "Problem Updating";
     }
@@ -21,14 +21,14 @@ if(isset($_POST['user'])){
 
 if(isset($_POST['admin'])){
     $id =$_POST['id'];
-    $role = "user";
+    $role = "admin";
 
     $db = Database::getDb();
     $userRole = new user();
     $count = $userRole->approveAdmin($role, $id, $db);
 
     if($count){
-        header("Location: "); /*********************** location? */
+        header("Location: userAdmin.php"); 
     }else{
         echo "Problem Updating";
     }
