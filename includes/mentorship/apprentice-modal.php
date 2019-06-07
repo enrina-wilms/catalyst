@@ -12,7 +12,7 @@
 				<form id="requestForm" method="post" action="">
 						<div class="form-group col-md-12">
 							<label for="description" id="mentor-name"></label>
-							<textarea id="description" name="description" class="form-control" aria-label="With textarea" rows="6" cols="50">
+							<textarea id="desc" name="desc" class="form-control" aria-label="With textarea" rows="6" cols="50">
                             </textarea>
                             <input type="hidden" name="mentor_id" id="mentor_id">
                             <input type="hidden" name="apprentice_id" id="apprentice_id">

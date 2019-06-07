@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
         
      <script>
-        CKEDITOR.replace( 'description' );
+        CKEDITOR.replace( 'desc' );
      </script>
   </body>
 </html>
