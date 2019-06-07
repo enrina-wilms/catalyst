@@ -120,6 +120,14 @@ if(isset($_GET['id'])){
 					<a href="#" class=""><?= $profile->email?></a>
 					<p>Phone:</p>
 					<a href="#" class=""><?= $profile->contact?></a>
+					<hr>
+<!--
+					<?php
+					require_once MODELS_PROFILE_PATH . "/github.php";
+					$username = 'enrina-wilms';
+					echo getGithub($username);
+					?>
+-->
 				</div>
 				<div class="card-footer text-muted">
 					<a href="#" class="">View Profile</a>

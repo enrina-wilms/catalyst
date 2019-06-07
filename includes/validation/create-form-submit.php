@@ -74,13 +74,14 @@
 	$location = $_POST['location'];
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
+	$github = $_POST['github'];
 //	$mentorship_status = $_POST['mentor-status'];
-	$mentorship_status = 1;
+//	$mentorship_status = 1;
 	$user_id = 1;
 		
 	$db = Database::getDb();
 	$statusObj = new Profile();
-	$add = $statusObj->addProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db);
+	$add = $statusObj->addProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $github, $user_id, $db);
 
 	if($add) {
 		//DISPLAY STATUS

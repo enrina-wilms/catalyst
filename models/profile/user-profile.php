@@ -48,10 +48,10 @@ class Profile
 	}
 	
 	//adding profile
-	public function addProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db){
+	public function addProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $github, $user_id, $db){
 			
-		$query = "INSERT INTO profiles(fname, lname, email, contact, image, location, position, portfolio_url, mentorship_status, user_id)
-		VALUES (:fname, :lname, :email, :contact, :image, :location, :position, :portfolio_url, :mentorship_status, :user_id)";
+		$query = "INSERT INTO profiles(fname, lname, email, contact, image, location, position, portfolio_url, github, user_id)
+		VALUES (:fname, :lname, :email, :contact, :image, :location, :position, :portfolio_url, :github, :user_id)";
 		$pdost = $db->prepare($query);
 		$pdost->bindParam(':fname', $fname);
 		$pdost->bindParam(':lname', $lname);
@@ -61,7 +61,7 @@ class Profile
 		$pdost->bindParam(':location', $location);
 		$pdost->bindParam(':position', $position);
 		$pdost->bindParam(':portfolio_url', $portfolio_url);
-		$pdost->bindParam(':mentorship_status', $mentorship_status);
+		$pdost->bindParam(':github', $github);
 		$pdost->bindParam(':user_id', $user_id);
 		
 		$profile = $pdost->execute();
@@ -70,18 +70,17 @@ class Profile
 	}
 	
 	//updating profile
-	public function updateProfile($id, $fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db){
+	public function updateProfile($id, $fname, $lname, $email, $contact, $location, $position, $portfolio_url, $github, $user_id, $db){
 		
 		$query = "UPDATE profiles
 				  SET fname = :fname,
 				  	  lname = :lname,
 					  email = :email,
 					  contact = :contact,
-					  image = :image,
 					  location = :location,
 					  position = :position,
 					  portfolio_url = :portfolio_url,
-					  mentorship_status = :mentorship_status,
+					  github = :github,
 					  user_id = :user_id
 				  WHERE id = :id";
 		
@@ -95,7 +94,7 @@ class Profile
 		$pdost->bindParam(':location' , $location);
 		$pdost->bindParam(':position' , $position);
 		$pdost->bindParam(':portfolio_url' , $portfolio_url);
-		$pdost->bindParam(':mentorship_status' , $mentorship_status);
+		$pdost->bindParam(':github', $github);
 		$pdost->bindParam(':user_id' , $user_id);
 		
 		$profile = $pdost->execute();

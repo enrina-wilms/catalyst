@@ -78,7 +78,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 <br>
 <br>
-<div class="container">
+<div class="container mb-4">
 	<div class="row">
 
 		<!--LEFT SIDEBAR PROFILE-->
@@ -106,6 +106,16 @@ require_once MODELS_STATUS_PATH . "/status.php";
 					<a href="mailto:<?=$profile->email?>" class="dev-contact-info"><?= $profile->email?></a>
 					<p><i class="fas fa-phone mr-2 dev-contact-icon mt-3"></i>Phone:</p>
 					<a href="tel:<?= $profile->contact?>" class="dev-contact-info"><?= $profile->contact?></a>
+					<hr>
+					
+					<!--GITHUB ACCOUNT-->
+<!--
+					<?php
+					require_once MODELS_PROFILE_PATH . "/github.php";
+					$username = 'enrina-wilms';
+					echo getGithub($username);
+					?>
+-->
 				</div>
 				<div class="card-footer text-muted">
 					<form class="action-btn-style" action="../userProfile/edit-profile.php" method="post">
@@ -243,7 +253,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 		</div>
 	</div>
 </div>
-
+<br>
 <?php require_once INCLUDES_USERPROFILE_PATH . "/experience-modal.php";?>
 <?php require_once INCLUDES_USERPROFILE_PATH . "/education-modal.php";?>
 <?php require_once INCLUDES_EXPERIENCE_PATH . "/edit-experience-modal.php";?>
