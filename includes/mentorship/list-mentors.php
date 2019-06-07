@@ -28,9 +28,8 @@ foreach($mentors as $mentor){
                 <a href="../developers/profile.php?id='.$mentor->id.'"><h4>'.ucfirst($mentor->fname). ' '. ucfirst($mentor->lname).'</h4></a>
                 <p class="mt-n1 mb-3 mentor-title">'.$mentor->position.'</p>
                 <a onclick="mentor_id('.$mentor->id.');mentor_name(\'' .$fullName. '\'); apprentice_id(5); apprentice_fname(\'Kenneth\'); apprentice_lname(\'Mendoza\');" ref="javascript:void(0)"><p class="mb-2 mentor-gray" data-toggle="modal" data-target="#apprentice" data-test="test">Become my Apprentice</p></a>
-                <a href="#" class="mentor-gray">Message</a>
                 <hr>
-                <h6 class="mentor-num">Number of Apprentice</h6>
+                <h6 class="mentor-num mb-1">Number of Apprentice</h6>
                 <span>10</span>
                 <hr>
                 <p class="mt-3"><a href="../developers/profile.php?id='.$mentor->id.'" class="mentor-profile">View Profile</a></p>

@@ -49,6 +49,9 @@ require_once "../../config.php";
 						<li class="nav-item">
 							<a class="nav-link" href="../developers/developers.php">developers</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../chat/chat-home.php">messenger</a>
+						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fas fa-cog"></i>

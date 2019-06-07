@@ -4,7 +4,7 @@ chat.fetchMessages = function (){
     $.ajax({
         url: 'chat.php',
         type: 'post',
-        data: { method: 'fetch' },
+        data: { method: 'fetch'},
         success: function(data){
             $('.messages').html(data);
         }
@@ -34,5 +34,5 @@ chat.entry.bind('keydown', function(e){
     }
 });
 
-chat.interval = setInterval(chat.fetchMessages, 5000);
+chat.interval = setInterval(chat.fetchMessages, 3000);
 chat.fetchMessages();

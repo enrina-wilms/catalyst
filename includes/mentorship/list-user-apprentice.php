@@ -13,7 +13,7 @@ foreach($apprentice as $app){
     $firstChar = mb_substr($fName, 0, 1, "UTF-8");
     $secChar = mb_substr($lName, 0, 1, "UTF-8");
     
-    echo '<div class="row">
+    echo '<a href="?id='.$app->profile_id.'"><div class="row">
         <div class="col-sm-2">
             <div class="profile-avatar-circle-mentor ml-n2">
                 <span class="profile-initials-mentor">'.$firstChar . $secChar.'</span>
@@ -22,6 +22,6 @@ foreach($apprentice as $app){
         <div class="col-sm-10">
             <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
         </div>
-    </div>
+    </div></a>
     <hr/>';
 }

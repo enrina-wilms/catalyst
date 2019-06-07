@@ -68,10 +68,17 @@ a:hover {
 .chat-box {
 	background-color: white;
 	height: 85vh;
+	padding: 10px;
+}
+.chat-m{
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 .chat-users {
 	border-right: 2px solid lightgray;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 .chat-user {
@@ -83,7 +90,6 @@ a:hover {
 
 .chat-friend {
 	width: 60%;
-	float: left;
 	background-color: #F1F0F0;
 }
 
@@ -91,27 +97,12 @@ a:hover {
 .chat-friend {
 	padding: 10px 1em;
 	border-radius: 50px;
-	/*
-	border-bottom-left-radius: 1.3em;
-	border-top-left-radius: 1.3em;
-	border-bottom-right-radius: 1.3em;
-    border-top-right-radius: 1.3em;
-*/
 }
 
 .chat-msg {
 	display: block;
 	font-size: 14px;
 }
-
-/*
-.vbottom{
-    position: relative;
-    top: 91%;
-	transform: translateY(-100%); 
-}
-*/
-.msg {}
 
 .fa-paper-plane {
 	color: #fff;
@@ -201,7 +192,7 @@ a:hover {
 }
 .profile-initials-mentor {
 	position: relative;
-	top: 10px;
+	top: 15px;
 	font-size: 20px;
 	line-height: 5px;
 	color: #fff;
@@ -210,12 +201,12 @@ a:hover {
 }
 .profile-name-mentor{
 	font-size: 17px;
-	margin-top: 10px;
+	margin-top: 12px;
 }
 .profile-avatar-circle-mentor {
 	margin: 0 auto;
-	width: 40px;
-	height: 40px;
+	width: 45px;
+	height: 45px;
 	background-color: #2d2d2d;
 	border: 5px solid #fff;
 	text-align: center;

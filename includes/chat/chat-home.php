@@ -3,6 +3,8 @@
 require_once '../../config.php';
 require_once 'header.php';
 
+session_start();
+$_SESSION["id"] = $_GET['id'];
 ?>
 
 <div class="container mt-4">
@@ -10,9 +12,9 @@ require_once 'header.php';
         <div class="col-sm-3 chat-box chat-users">
             <?php require_once '../mentorship/list-user-apprentice.php';?>
         </div>
-        <div class="col-sm-8 chat-box form-group">
+        <div class="col-sm-8 chat-box form-group chat-m">
 			<div class="chat-message-container">
-            <div class="row messages"><?php require_once 'chat.php';?></div>
+                <div class="row messages"><?php require_once 'chat.php';?></div>
 			</div>
 			<div class="row input-group mb-3 chat-input">
 				<input type="text" class="form-control entry" placeholder="Type a message..." aria-label="message" aria-describedby="basic-addon2">
@@ -20,14 +22,8 @@ require_once 'header.php';
 					<button class="btn chat-button" type="button"><i class="fas fa-paper-plane"></i></button>
 				</div>
 			</div>
-<!--
-            <div class="row vbottom">
-                <input type="text" class="form-control entry" placeholder="Type a message...">
-            </div>
--->
         </div>
     </div>
 </div>
-
 
 <?php require_once 'footer.php'; ?>
