@@ -3,7 +3,7 @@
 require_once '../../models/database.php';
 require_once '../../models/chat/Chat.php';
 
-session_start();
+@session_start();
 $dbcon = Database::getDb();
 $friendId = $_SESSION['id'];
 if(isset($_POST['method'])){

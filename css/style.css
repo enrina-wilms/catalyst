@@ -68,7 +68,11 @@ a:hover {
 .chat-box {
 	background-color: white;
 	height: 85vh;
-	padding: 10px;
+	padding: 0px;
+}
+.active-chat{
+	background-color: #E74C3C;
+	color: #fff;
 }
 .chat-m{
 	border-top-right-radius: 10px;
@@ -128,11 +132,12 @@ a:hover {
 	text-decoration: none;
 }
 .linka{
-	border-bottom: 2px solid #E74B3D;
+	border-bottom: 1px solid #E74B3D;
 	padding: 10px;
 }
 .linka:hover{
 	background-color: #F1F0F0;
+	color: black;
 	text-decoration: none;
 }
 
