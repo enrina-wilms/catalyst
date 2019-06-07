@@ -7,7 +7,10 @@ $apprentice= new Mentors();
 $apprentice = $apprentice->listApprentice($dbcon, 7);
 
 @session_start();
-$friendId = $_SESSION['id'];
+$friendId = '';
+if(isset($_SESSION['id'])){
+    $friendId = $_SESSION['id'];
+}
 
 foreach($apprentice as $app){
     $fullName = ucfirst($app->apprentice_fname) .' '. ucfirst($app->apprentice_lname);
