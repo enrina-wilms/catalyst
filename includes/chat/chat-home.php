@@ -4,7 +4,10 @@ require_once '../../config.php';
 require_once 'header.php';
 
 session_start();
-$_SESSION["id"] = $_GET['id'];
+if(isset($_GET['id'])){
+    $_SESSION["id"] = $_GET['id'];
+}
+
 ?>
 
 <div class="container mt-4">

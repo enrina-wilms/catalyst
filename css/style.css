@@ -116,7 +116,6 @@ a:hover {
 .chat-message {
 	position: relative;
 }
-
 .chat-input {
 	margin-top: 5px;
 	padding-top: 5px;
@@ -124,6 +123,17 @@ a:hover {
 	width: 96%;
 	position: absolute;
 	bottom: 0;
+}
+.chat-users a{
+	text-decoration: none;
+}
+.linka{
+	border-bottom: 2px solid #E74B3D;
+	padding: 10px;
+}
+.linka:hover{
+	background-color: #F1F0F0;
+	text-decoration: none;
 }
 
 .chat-message-container {

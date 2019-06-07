@@ -7,7 +7,6 @@ $dbcon = Database::getDb();
 $mentors = new Mentors();
 $mentors = $mentors->getMentorRequestById($dbcon, 7);
 
-
 foreach($mentors as $mentor){
     $fullName = ucfirst($mentor->apprentice_fname) .' '. ucfirst($mentor->apprentice_lname);
     $fName = $mentor->apprentice_fname;

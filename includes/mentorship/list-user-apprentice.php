@@ -13,15 +13,15 @@ foreach($apprentice as $app){
     $firstChar = mb_substr($fName, 0, 1, "UTF-8");
     $secChar = mb_substr($lName, 0, 1, "UTF-8");
     
-    echo '<a href="?id='.$app->profile_id.'"><div class="row">
-        <div class="col-sm-2">
-            <div class="profile-avatar-circle-mentor ml-n2">
-                <span class="profile-initials-mentor">'.$firstChar . $secChar.'</span>
+    echo '<a href="?id='.$app->profile_id.'">
+        <div class="row linka">
+            <div class="col-sm-2">
+                <div class="profile-avatar-circle-mentor ml-n2">
+                    <span class="profile-initials-mentor">'.$firstChar . $secChar.'</span>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-10">
-            <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
-        </div>
-    </div></a>
-    <hr/>';
+            <div class="col-sm-10">
+                <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
+            </div>
+        </div></a>';
 }

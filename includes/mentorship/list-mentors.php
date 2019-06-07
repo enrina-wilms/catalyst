@@ -6,6 +6,12 @@ $dbcon = Database::getDb();
 $mentors = new Mentors();
 $mentors = $mentors->listAllMentor($dbcon);
 
+$dbcon = Database::getDb();
+$num_apprentice = new Mentors();
+$num_apprentice  = $num_apprentice ->listMentorApprentice($dbcon);
+
+$id = array();
+
 foreach($mentors as $mentor){
     $fullName = ucfirst($mentor->fname) .' '. ucfirst($mentor->lname);
     $fName = $mentor->fname;
@@ -14,6 +20,15 @@ foreach($mentors as $mentor){
 	$firstChar = mb_substr($fName, 0, 1, "UTF-8");
     $secChar = mb_substr($lName, 0, 1, "UTF-8");
     
+    foreach($num_apprentice as $row){
+        if($mentor->id === $row->mentor){
+            @$id[$mentor->id] += 1;
+        } 
+    }
+    $count = 0;
+    if(isset($id[$mentor->id])){
+        $count = $id[$mentor->id];
+    }
     echo
     '<div class="col-md-3 mt-4">
         <div class="card text-center">
@@ -30,7 +45,7 @@ foreach($mentors as $mentor){
                 <a onclick="mentor_id('.$mentor->id.');mentor_name(\'' .$fullName. '\'); apprentice_id(5); apprentice_fname(\'Kenneth\'); apprentice_lname(\'Mendoza\');" ref="javascript:void(0)"><p class="mb-2 mentor-gray" data-toggle="modal" data-target="#apprentice" data-test="test">Become my Apprentice</p></a>
                 <hr>
                 <h6 class="mentor-num mb-1">Number of Apprentice</h6>
-                <span>10</span>
+                <span>'.$count.'</span>
                 <hr>
                 <p class="mt-3"><a href="../developers/profile.php?id='.$mentor->id.'" class="mentor-profile">View Profile</a></p>
             </div>

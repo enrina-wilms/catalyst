@@ -13,6 +13,18 @@ class Mentors{
         return $mentors;
     }
 
+    //getting all the mentors from the database
+    public function listMentorApprentice($db){
+            
+        $query = "SELECT * FROM mentors where status = 'approved'";
+        $pdost = $db->prepare($query);
+        $pdost->execute();
+        
+        $mentors = $pdost->fetchAll(PDO::FETCH_OBJ);
+        
+        return $mentors;
+    }
+
     //adding a mentorship request
 	public function mentorshipRequest($db, $mentor, $apprentice_fname, $apprentice_lname, $message, $status, $profile_id){
 			
