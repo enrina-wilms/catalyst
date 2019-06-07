@@ -11,17 +11,15 @@ class user
         return $count;
     }
     public function login($email, $password, $db){
-        $sql = "SELECT id,password FROM users WHERE email = :email AND password=:password";
+        $sql = "SELECT id,password FROM users WHERE email = :email";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(":email", $email);
         $pdost->execute();
-
-        //echo  password_hash($password, 1);
-
         if ($pdost->rowCount() > 0) { //0 or 1 boolean value
             $result = $pdost->fetch(PDO::FETCH_OBJ);
-            if(password_verify($password,$result->password){
-                
+            if(password_verify($password,$result->password)){
+                $_SESSION['uId'] = $result->id;
+                return true;
             }
         } else {
             return false;

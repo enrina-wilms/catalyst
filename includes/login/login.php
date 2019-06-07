@@ -35,11 +35,11 @@ $email = $password = "";
         $login = new user();
         $loginUser = $login->login($email, $password, $db);
 
-        echo 'here';
-        echo 'LU: '.$loginUser;
-        die();
+        /*echo 'here';
+        echo 'LU: '.$loginUser;*/
+        
         if($loginUser){
-            echo "<p class = 'addUser'> Welcome! </p>";
+            header( "Location: homepage.php");
         }
     }
 }
