@@ -25,16 +25,8 @@ require_once MODELS_STATUS_PATH . "/status.php";
 	$statuss =  $s->getStatusByProfileId($profile_id, $db);
 	
 
-
+	//sam smith profile_id
 	$id = 7;
-//	$db = Database::getDb();
-//	$experienceObj = new Experience();
-//	$listExp = $experienceObj->getAllExperience($db);
-//
-//	$db = Database::getDb();
-//	$educationObj = new Education();
-//	$listEduc = $educationObj->getAllEducation($db);
-
 	$db = Database::getDb();
 	$experienceObj = new Experience();
 	$listExp = $experienceObj->userExperience($id,$db);
@@ -42,10 +34,6 @@ require_once MODELS_STATUS_PATH . "/status.php";
 	$db = Database::getDb();
 	$educationObj = new Education();
 	$listEduc = $educationObj->userEducation($id,$db);
-//	$db = Database::getDb();
-//	$educationObj = new Education();
-//	$listEduc = $educationObj->getAllEducation($id,$db);
-
 
     $fName = $profile->fname;
 	$lName = $profile->lname;
@@ -95,21 +83,24 @@ require_once MODELS_STATUS_PATH . "/status.php";
 				</div>
 				<div class="card-body text-left dev-contact">
 					<hr>
-					<a href="?mentorStatus=1" class="">Become a Mentor</a>
+					<?php 
+					if($profile->mentorship_status == 0){
+						echo '<a href="?mentorStatus=1" class="">Become a Mentor</a>';} 
+					?>
 					<a href="#" class="">Become my Apprentice</a>
 					<a href="#" class="">Add Friend</a>
 					<a href="#" class="">Message</a>
 					<hr>
 					<p><i class="fas fa-link mr-2 dev-contact-icon"></i>Portfolio:</p>
-					<a href="#" class="dev-contact-info"><?= $profile->portfolio_url?></a>
+					<a href="http://<?= $profile->portfolio_url?>" class="dev-contact-info" target="_blank"><?= $profile->portfolio_url?></a>
 					<p><i class="fas fa-envelope-open-text mr-2 dev-contact-icon mt-3"></i>Email:</p>
 					<a href="mailto:<?=$profile->email?>" class="dev-contact-info"><?= $profile->email?></a>
 					<p><i class="fas fa-phone mr-2 dev-contact-icon mt-3"></i>Phone:</p>
 					<a href="tel:<?= $profile->contact?>" class="dev-contact-info"><?= $profile->contact?></a>
 					<hr>
-					
+
 					<!--GITHUB ACCOUNT-->
-<!--
+					<!--
 					<?php
 					require_once MODELS_PROFILE_PATH . "/github.php";
 					$username = 'enrina-wilms';
@@ -165,12 +156,12 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 						</div>
 					</h5>
-				
+
 					<?php /*foreach($statuss as $status){
 							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>';
 						} */
 					?>
-		
+
 				</div>
 
 				<!--ABOUT TAB CONTAINER-->
@@ -235,17 +226,19 @@ require_once MODELS_STATUS_PATH . "/status.php";
 		<!--RIGHT SIDEBAR PROFILE-->
 		<div class="col-md-3 main-right-sidebar">
 
-			<!--FRIENDS SUGGESTION SIDEBAR-->
+			<!--MENTORS REQUEST SIDEBAR-->
+			<h5 class="sidebar-h5">Mentorship Requests</h5>
 			<div class="sidebar-right-height">
-				<h5 class="sidebar-h5">Mentorship Requests</h5>
+
 				<?php require_once '../mentorship/list-apprentice-request.php'; ?>
 			</div>
 
-			<!--MENTORS SUGGESTION SIDEBAR-->
+			<!--FRIENDS REQUEST SIDEBAR-->
+			<h5 class="sidebar-h5">Friend Requests</h5>
 			<div class="sidebar-right-height">
-				<h5 class="sidebar-h5">Friend Requests</h5>
 			</div>
-			<!--TUTORIALS/VIDEOS ADS SIDEBAR-->
+			
+			<!--APPRENTICE SIDEBAR-->
 			<div class="sidebar-right-height">
 				<h5 class="sidebar-h5">Apprentices</h5>
 				<?php require_once '../mentorship/list-user-apprentice.php'; ?>

@@ -107,21 +107,26 @@ if(isset($_GET['id'])){
 					</div>
 				</div>
 
-				<div class="card-body text-left">
+				<div class="card-body text-left dev-contact">
 					<hr>
-					<a href="#" class="">Become a Mentor</a>
+					<?php 
+					if($profile->mentorship_status == 0){
+						echo '<a href="?mentorStatus=1" class="">Become a Mentor</a>';} 
+					?>
 					<a href="#" class="">Become my Apprentice</a>
 					<a href="#" class="">Add Friend</a>
 					<a href="#" class="">Message</a>
 					<hr>
-					<p>Portfolio:</p>
-					<a href="#" class=""><?= $profile->portfolio_url?></a>
-					<p>Email:</p>
-					<a href="#" class=""><?= $profile->email?></a>
-					<p>Phone:</p>
-					<a href="#" class=""><?= $profile->contact?></a>
+					<p><i class="fas fa-link mr-2 dev-contact-icon"></i>Portfolio:</p>
+					<a href="http://<?= $profile->portfolio_url?>" class="dev-contact-info" target="_blank"><?= $profile->portfolio_url?></a>
+					<p><i class="fas fa-envelope-open-text mr-2 dev-contact-icon mt-3"></i>Email:</p>
+					<a href="mailto:<?=$profile->email?>" class="dev-contact-info"><?= $profile->email?></a>
+					<p><i class="fas fa-phone mr-2 dev-contact-icon mt-3"></i>Phone:</p>
+					<a href="tel:<?= $profile->contact?>" class="dev-contact-info"><?= $profile->contact?></a>
 					<hr>
-<!--
+
+					<!--GITHUB ACCOUNT-->
+					<!--
 					<?php
 					require_once MODELS_PROFILE_PATH . "/github.php";
 					$username = 'enrina-wilms';
@@ -154,8 +159,8 @@ if(isset($_GET['id'])){
 
 				<!--FEEDS TAB CONTAINER-->
 				<div class="tab-pane fade show active" id="nav-feeds" role="tabpanel" aria-labelledby="nav-feeds-tab">
-					
-				
+
+
 
 
 				</div>

@@ -15,36 +15,20 @@ if(isset($_POST['update'])) {
 
 if(isset($_POST['updateProfile'])) {
 	
-//	if( $_FILES['image']['error'] == 0 )
-//    {
-//        
-//        // Convert the image to a base64 string
-//        $file = base64_encode( file_get_contents( $_FILES['profilePicture']['tmp_name'] ) );
-//        
-//    }
-//    else
-//    {
-//        
-//        $file = '';
-//        
-//    }
-	
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$email = $_POST['email'];
 	$contact = $_POST['phone'];
-//	$image = $_POST['profilePicture'];
-//	$image = $file;
 	$location = $_POST['location'];
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
-//	$mentorship_status = $_POST['mentor-status'];
-//	$mentorship_status = 1;
-	$user_id = 1;
+	$mentorship_status = $_POST['mentor-status'];
+	$profile_id = 7;
+	$user_id = 3;
 		
 	$db = Database::getDb();
 	$profileObj = new Profile();
-	$update = $profileObj->updateProfile(9,$fname, $lname, $email, $contact, $location, $position, $portfolio_url, $user_id, $db);
+	$update = $profileObj->updateProfile($profile_id, $fname, $lname, $email, $contact, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db);
 
 	if($update) {
 		//DISPLAY STATUS
@@ -100,29 +84,14 @@ if(isset($_POST['updateProfile'])) {
 					<input type="text" class="form-control" id="portfolio" name="portfolio" value="<?= $update->portfolio_url; ?>">
 				</div>
 				<div class="form-group col-md-6">
-					<label for="portfolio">Github Account</label>
-					<input type="text" class="form-control" id="github" name="github" value="<?= $update->github; ?>">
-					<span class="error-message">
-					</span>
-				</div>
-<!--
-				
-				<div class="form-group col-md-6">
-					<label for="profilePicture">Upload Profile Picture</label>
-					<input type="file" class="form-control-file" id="profilePicture" name="profilePicture">
-				</div>
--->
-<!--
-				<div class="form-group col-md-6">
 					<label class="labelname">Mentorship Status</label>
 					<div class="inputbreak">
 						<select id="mentor-status" name="mentor-status" class="dropdown btn btn-dark dropdown-toggle btn-block" onchange="">
 							<option value="1">Active</option>
-							<option value="0">inactive</option>
+							<option value="0">Inactive</option>
 						</select>
 					</div>
 				</div>
--->
 			</div>
 
 			<button id="updateProfile" name="updateProfile" type="submit" class="btn btn-dark createProfile-button">Update Profile</button>
