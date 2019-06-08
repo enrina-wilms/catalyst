@@ -237,10 +237,10 @@ require_once MODELS_STATUS_PATH . "/status.php";
 			<h5 class="sidebar-h5">Friend Requests</h5>
 			<div class="sidebar-right-height">
 			</div>
-			
+
 			<!--APPRENTICE SIDEBAR-->
+			<h5 class="sidebar-h5">Apprentices</h5>
 			<div class="sidebar-right-height">
-				<h5 class="sidebar-h5">Apprentices</h5>
 				<?php require_once '../mentorship/list-user-apprentice.php'; ?>
 			</div>
 		</div>

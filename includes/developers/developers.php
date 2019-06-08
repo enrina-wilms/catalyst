@@ -16,7 +16,7 @@ $list = $profileObj->getAllProfile($db);
 
 <br>
 <br>
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 
 <!--		<div class="card-deck" style="width:100%;">-->

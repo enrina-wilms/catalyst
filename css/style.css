@@ -16,7 +16,9 @@ a {
 	text-decoration: none;
 	color: #353b48;
 }
-
+a:hover{
+	text-decoration: none;
+}
 p {
 	margin: 0;
 	padding: 0;
@@ -192,18 +194,22 @@ a:hover {
 	color: darkgray;
 }
 .mentor-gray:hover{
-	color: #c0392b;
+	color: #E74C3C;
 	cursor: pointer;
 }
 
 .mentor-num {
 	font-size: 20px;
-	font-weight: 1000;
+	font-weight: bold;
 }
 
 .mentor-profile {
-	font-weight: 1000;
-	color: #c0392b;
+	font-weight: bold;
+	color: #E74C3C;
+}
+.mentor-profile:hover {
+	color: #2d2d2d;
+	text-decoration: none;
 }
 .profile-initials-mentor {
 	position: relative;
@@ -354,6 +360,7 @@ span{
 }
 
 .main-h5 {
+	text-transform: capitalize!important;
 	font-weight: 600;
 	margin-bottom: 0;
 }
@@ -366,6 +373,9 @@ span{
 
 .main-cardBody {
 	padding-bottom: 0;
+}
+p.card-text{
+	text-transform: capitalize!important;
 }
 
 .main-action-button {
@@ -398,7 +408,7 @@ span{
 }
 
 .dev-h3 {
-	text-transform:uppercase;
+	text-transform:capitalize!important;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: center;
