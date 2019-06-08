@@ -2,10 +2,9 @@
 
 foreach($list as $profile) {	
 	
-//	//DATE WHEN THE profile WAS CREATED
-//	$datePosted = date('l, F d, Y', strtotime($profile->date_post));
-//	
 	//GETTING FIRSTNAME AND LASTNAME FOR USERS NAME AND INITIALS TO BE DISPLAY SO USER WILL KNOW WHO OWNS THE POSTS
+	$fullName = ucfirst($profile->fname) .' '. ucfirst($profile->lname);
+	
 	$fName = $profile->fname;
 	$lName = $profile->lname;
 	
@@ -28,7 +27,7 @@ foreach($list as $profile) {
                 </div>	
             </div>
             <div class="card-body text-center">
-                <a href="../developers/profile.php?id='.$profile->id.'" class="dev-h3"><h4>'.($profile->fname). ' ' . $profile->lname.'</h4></a>
+                <a href="../developers/profile.php?id='.$profile->id.'"><h4>'.ucfirst($fName). ' '. ucfirst($lName).'</h4></a>
                 <p class="mt-n1 mb-3 mentor-title">'.$profile->position.'</p>
                 <hr>
                 <h6 class="mentor-num mb-1">Friends</h6>

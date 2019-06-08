@@ -14,9 +14,7 @@ $list = $profileObj->getAllProfile($db);
 
 ?>
 
-<br>
-<br>
-<div class="container-fluid">
+<div class="container-fluid mt-4">
 	<div class="row">
 
 <!--		<div class="card-deck" style="width:100%;">-->
@@ -25,7 +23,8 @@ $list = $profileObj->getAllProfile($db);
 <!--		</div>-->
 		</div>
 	</div>
-
+	<br>
+	<br>
 	<?php
 require_once 'footer.php';
 

@@ -136,7 +136,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 			<div class="tab-content" id="nav-tabContent">
 
 				<!--FEEDS TAB CONTAINER-->
-				<div class="tab-pane fade show active" id="nav-feeds" role="tabpanel" aria-labelledby="nav-feeds-tab">
+				<div class="tab-pane fade" id="nav-feeds" role="tabpanel" aria-labelledby="nav-feeds-tab">
 
 
 					<h5 class="sidebar-h5" style="background:white;">Share Your Status
@@ -165,7 +165,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 				</div>
 
 				<!--ABOUT TAB CONTAINER-->
-				<div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+				<div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
 
 					<!--EXPERIENCE SECTION-->
 					<div class="card main-profile-card">
