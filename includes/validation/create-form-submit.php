@@ -1,6 +1,6 @@
 <?php
-    $nameErr = $emailErr = $phoneErr = $subjectErr = $messageErr = $success = "";
-    $name = $email = $phone = $subject = $message = $errMessage = "";
+    $nameErr = $emailErr = $phoneErr = $emptyErr = $success = "";
+    $fname = $lname  = $email = $contact = $location = $position = $portfolio_url = $errMessage = "";
 
     if(isset($_POST['createProfile'])){
 		
@@ -12,13 +12,7 @@
 	$location = $_POST['location'];
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
-
-//    $name = $_POST['yourName'];
-//    $email = $_POST['yourEmail'];
-//    $phone = $_POST['phoneNumber'];
-//    $subject = $_POST['subject'];
-//    $message = $_POST['message'];
-    
+    $user_id = 1;
     //FUNCTION AND VALIDATION FOR INPUT FIELDS
         
     //VALIDATION FOR NAME
@@ -47,41 +41,31 @@
     } else {
         echo empty_message();   
     }
+	
+	if (!empty_required($fname) || !empty_required($lname) || !empty_required($email) || !empty_required($contact) || !empty_required($position) || !empty_required($location) || !empty_required($portfolio_url)) {
 
+        $errMessage = "Please fill the field";
+    } else {
+        echo empty_message();
+    }	
+		
     //IF ALL INPUT FIELDS DOESN'T HAVE ERROR MESSAGE A CONFIRMATION OR THANK YOU MESSAGE WILL APPEAR
     if ($errMessage == "" && $nameErr == "" && $emailErr == "" && $phoneErr == "") {
         
-        if( $_FILES['image']['error'] == 0 )
-    {
-        
-        // Convert the image to a base64 string
-        $file = base64_encode( file_get_contents( $_FILES['profilePicture']['tmp_name'] ) );
-        
-    }
-    else
-    {
-        
-        $file = '';
-        
-    }
-	
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
-	$contact = $_POST['phone'];
-//	$image = $_POST['profilePicture'];
-	$image = $file;
-	$location = $_POST['location'];
-	$position = $_POST['position'];
-	$portfolio_url = $_POST['portfolio'];
-	$github = $_POST['github'];
-//	$mentorship_status = $_POST['mentor-status'];
-//	$mentorship_status = 1;
-	$user_id = 1;
+    //if(isset($_POST['createProfile'])) {
+//	
+//	$fname = $_POST['fname'];
+//	$lname = $_POST['lname'];
+//	$email = $_POST['email'];
+//	$contact = $_POST['phone'];
+//	$location = $_POST['location'];
+//	$position = $_POST['position'];
+//	$portfolio_url = $_POST['portfolio'];
+//	$user_id = 1;
 		
 	$db = Database::getDb();
 	$statusObj = new Profile();
-	$add = $statusObj->addProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $github, $user_id, $db);
+	$add = $statusObj->addProfile($fname, $lname, $email, $contact, $location, $position, $portfolio_url, $user_id, $db);
 
 	if($add) {
 		//DISPLAY STATUS
@@ -90,6 +74,8 @@
 		$message = "Problem posting a status!";
 	}
 	exit();
+//}
+
     }
 } // end of isset
 //EOF

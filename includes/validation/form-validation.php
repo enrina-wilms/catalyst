@@ -25,15 +25,6 @@
         return true;
     }
 
-
-    //VALIDATION FOR SUBJECT
-    function valid_subject($selected){
-        if($selected == "0"){
-            return false;
-        }
-        return true;
-    }
-
     //FUNCTION TO CHECK EMPTY FIELDS 
     function empty_required($input){
         if($input == "" ){
@@ -44,7 +35,7 @@
     
     //FUNCTION I CREATED TO I DON'S HAVE TO TYPE EMPTY ERROR MESSAGE WHEN CALLING THE FUNCTIONS FOR VALIDATION
     function empty_message(){
-        $errMessage = $nameErr = $emailErr = $phoneErr = $subjectErr = $messageErr = $success = "";
+        $errMessage = $nameErr = $emailErr = $phoneErr = "";
     }
 
 //EOF

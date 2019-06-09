@@ -8,6 +8,8 @@ require_once "../../config.php";
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Styling-->
+    <link rel="stylesheet" href="<?= $csspath ?>style.css">
     <title>User Admin</title>
 </head>
 
@@ -17,13 +19,13 @@ require_once "../../config.php";
                         <div class="container-fluid">
                         <h2>Users</h2>
                         <div class="table-responsive">
-                            <table class='table table-light'>
+                            <table id="userTable" class='table table-light'>
                             <thead>
                                 <tr>
-                                <th>email</th>
-                                <th>password</th>
-                                <th>date</th>
-                                <th>role</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Date</th>
+                                <th>Role</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                                 <th>Admin/User</th>
