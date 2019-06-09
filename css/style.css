@@ -577,6 +577,7 @@ p.card-text{
 	border: none;
 	border-left: 2px solid #343A40;
 	margin: 20px 20px 20px 0;
+	background-color: white;
 	/*	padding: 5px 10px 20px 10px;*/
 }
 
@@ -612,8 +613,4 @@ p.card-text{
 .sidebar-right-height {
 	height: 200px;
 	overflow: auto;
-}
-/*=======================================STATUS==================================================*/
-.status-container{
-	background-color: white;
 }
