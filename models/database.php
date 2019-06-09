@@ -2,8 +2,8 @@
 class Database
 {
 	private static $user = 'root';
+	private static $pass = ''; 
 	//private static $pass = 'root'; //change to nothing with xampp
-	private static $pass = 'root'; //change to nothing with xampp
 	private static $db = 'webdev_networking';
 	private static $dsn = 'mysql:host=localhost;dbname=webdev_networking';
 	private static $dbcon;

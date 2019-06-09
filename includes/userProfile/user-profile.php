@@ -23,6 +23,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 	$s = new Status();
 	$profile_id=6;
 	$statuss =  $s->getStatusByProfileId($profile_id, $db);
+
 	
 
 
@@ -166,9 +167,9 @@ require_once MODELS_STATUS_PATH . "/status.php";
 						</div>
 					</h5>
 				
-					<?php /*foreach($statuss as $status){
+					<?php foreach($statuss as $status){
 							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>';
-						} */
+						} 
 					?>
 		
 				</div>

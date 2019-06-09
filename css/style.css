@@ -596,3 +596,7 @@ span{
 	height: 200px;
 	overflow: auto;
 }
+/*=======================================STATUS==================================================*/
+.status-container{
+	background-color: white;
+}

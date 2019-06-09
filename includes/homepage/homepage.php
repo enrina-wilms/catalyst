@@ -3,9 +3,10 @@ require_once '../../config.php';
 require_once 'header.php';
 require_once MODELS_PATH . "/database.php";
 require_once MODELS_PROFILE_PATH . "/user-profile.php";
+require_once MODELS_STATUS_PATH . "/status.php";
 
 
-
+	
 	$query = "SELECT * FROM profiles WHERE user_id = 3";
 		
 	$db = Database::getDb();
@@ -13,6 +14,11 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 	$profile = $pdost->execute();
 	$profile = $pdost->fetch(PDO::FETCH_OBJ);
 
+	/****************STATUS******* */
+	$s = new Status();
+	$statuss =  $s->getAllStatus($db);
+
+	
 	 $fName = $profile->fname;
 	 $lName = $profile->lname;
 	
@@ -73,6 +79,10 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 
 				</div>
 			</h5>
+			<?php foreach($statuss as $status){
+					echo '<div class="status-container"><h5>'. $status->message .'</h5></div>';
+				} 
+			?>
 		</div>
 
 		<!--RIGHT SIDEBAR PROFILE-->
