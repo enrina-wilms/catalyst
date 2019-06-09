@@ -39,7 +39,7 @@ $email = $password = "";
         echo 'LU: '.$loginUser;*/
         
         if($loginUser){
-            header( "Location: homepage.php");
+            header( "Location: ../homepage/homepage.php");
         }
     }
 }

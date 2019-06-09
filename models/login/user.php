@@ -38,19 +38,20 @@ class user
     public function getUserById($id, $db){
         $sql = "SELECT * FROM users WHERE id = :id";
         $pdost = $db->prepare($sql);
-        $pdost = bindParam(':id', $id);
-        $count = $pdost->execute();
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        $count = $pdost->fetch(PDO::FETCH_OBJ);
         return $count;
     }
     public function getAllUsers($db){
         $sql = "SELECT * FROM users";
         $pdost = $db->prepare($sql);
         $pdost->execute();
-        $count = $pdost->fetchAll(PDO::Fetch_OBJ);
+        $count = $pdost->fetchAll(PDO::FETCH_OBJ);
         return $count;
     }
     public function deleteUser($id, $db){
-        $sql = "DELETE FROM users WHERE id = :id";
+        $sql = "DELETE FROM users INNER JOIN profiles on users.id = profiles.user_id WHERE id = :id";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(':id', $id);
         $count = $pdost->execute();
@@ -59,6 +60,7 @@ class user
     public function updateUser($id, $email, $password, $db){
         $sql = "UPDATE users SET email = :email, password = :password WHERE id = :id";
         $pdost = $db->prepare($sql);
+        $pdost->bindParam(':id', $id);
         $pdost->bindParam(':email', $email);
         $enc_password = password_hash($password, 1);
         $pdost->bindParam(':password', $enc_password);

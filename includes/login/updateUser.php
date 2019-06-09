@@ -11,27 +11,31 @@ require_once MODELS_LOGIN_PATH . "/user.php";
         $updUser = new user();
         $user = $updUser->getUserById($id, $db);
 
-        $userEmail = $user->email;
-        $userPass = $user->password;
+        $email = $user->email;
+        $password = $user->password;
     }
 
     if(isset($_POST['updUser'])){
         $id = $_POST['uid']; 
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $conPass = $_POST['confirmPassword'];
+        
 
 
-        if($userEmail == ""){
+        if($email == ""){
             echo "Please Enter an Email";
-        }elseif($userPass == ""){
+        }elseif($password == ""){
             echo "Please Enter a Password";
+        }elseif($password !== $conPass){
+            echo "Passwords Do Not Match";
         }else{
             $db = Database::getDb();
             $updUser = new user();
             $count = $updUser->updateUser($id, $email, $password, $db);
 
             if($count){
-                header("Location: "); /*****************************pick a location */
+                header("Location: userAdmin.php"); /*****************************pick a location */
             }
         }exit;
     }
@@ -39,7 +43,7 @@ require_once MODELS_LOGIN_PATH . "/user.php";
 <form action="" method="POST">
 <h2>Update</h2>
 <input type="hidden" name="uid" value="<?= $user->id; ?>" />
-Email:<input class="userInput" type="text" name="email"/>
+Email:<input class="userInput" type="text" name="email" value="<?=$user->email;?>" /> <br/>
 <span id="emailErr" style="color:red;">
     <?php
         if(isset($emailErr)) {
@@ -47,7 +51,7 @@ Email:<input class="userInput" type="text" name="email"/>
         }
     ?>
 </span>
-Password:<input class="userInput" type="text" name="password"/>
+Password:<input class="userInput" type="text" name="password" value="<?=$user->password;?>" /><br/>
 <span id="passErr" style="color:red;">
     <?php
         if(isset($passErr)) {
@@ -55,7 +59,7 @@ Password:<input class="userInput" type="text" name="password"/>
         }
     ?>
 </span>
-Confirm Password:<input class="userInput" type="text" name="confirmPassword"/>
+Confirm Password:<input class="userInput" type="text" name="confirmPassword"/><br/>
 <span id="conPassErr" style="color:red;">
     <?php
         if(isset($conPassErr)) {

@@ -66,6 +66,13 @@ a:hover {
 .modal-head h5, .modal-head button{
 	color: white;
 }
+/*====================================== Users ======================================================*/
+#userTable{
+	border: 1px solid black;
+}
+#userTable td{
+	border: 1px solid black;
+}
 /*====================================== CHAT ======================================================*/
 .chat-box {
 	background-color: white;
