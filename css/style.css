@@ -66,6 +66,23 @@ a:hover {
 .modal-head h5, .modal-head button{
 	color: white;
 }
+/*=================================== Login/Register ======================================================*/
+.btn{
+	background-color:#ff5252;
+	color: white;
+}
+.container{
+	position: relative;
+	top: 250px;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+.loginForms{
+	background-color:#ff5252;
+	color: white;
+}
+
 /*====================================== Users ======================================================*/
 #userTable{
 	border: 1px solid black;
