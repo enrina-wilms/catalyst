@@ -157,20 +157,40 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 						</div>
 					</h5>
-<<<<<<< HEAD
-				
-					<?php foreach($statuss as $status){
-=======
 
-					<?php /*foreach($statuss as $status){
->>>>>>> 89aeae441eae4407999d1b9a3c45b67147c7c4b5
-							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>';
+					<?php foreach($statuss as $status){
+							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' . 
+								'<div class="comment-section">'.
+								'<label>Comment: </label>'.
+								'<form action = "" method = POST >'.
+									'<input type="hidden" name= "status_id " value ="' . $status->id . '" />'.
+									'<input type="text" class="form-control" name="comment" />'.
+								'</form>';
+								$c = new Comment();
+								$statusComments =  $c->getCommentsByStatusId($ststus->id, Database::getDb());
+								//var_dump($statusComments);
+								if($statusComments)
+								{
+									echo '<ul class="list-group list-group-flush comment-list">';
+									foreach($statusComments as $statusComment)
+									{
+										//echo $blogcomment;
+											echo '<li class="list-group-item comment">' . $statusComment->comment . '</li>';
+									}
+									echo '</ul></div></div>';
+								}
+								else
+								{
+									echo '</div></div>' ;
+								}
+
 						} 
 					?>
 
 				</div>
-
+				
 				<!--ABOUT TAB CONTAINER-->
+	
 				<div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
 
 					<!--EXPERIENCE SECTION-->
