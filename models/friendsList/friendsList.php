@@ -48,7 +48,7 @@ class Friends{
         $friends = $pdost->fetch(PDO::FETCH_OBJ);
         return $friends;
     } */
-    public function unfriend($db, $id, $status){
+    public function unfriend($db, $id, $friends_status){
 		$query = "UPDATE friends
 				  SET friends_status = :friends_status
 				  WHERE id = :id";
