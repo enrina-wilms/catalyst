@@ -50,13 +50,14 @@ class user
         $count = $pdost->fetchAll(PDO::FETCH_OBJ);
         return $count;
     }
-    public function deleteUser($id, $db){
-        $sql = "DELETE FROM users INNER JOIN profiles on users.id = profiles.user_id WHERE id = :id";
+    public function deleteUser($db){
+        $sql = "DELETE FROM users, profiles, experiences Using users INNER JOIN profiles ON users.id  = profiles.user_id  INNER JOIN experiences ON experiences.profile_id = profiles.id WHERE users.id = 1";
         $pdost = $db->prepare($sql);
-        $pdost->bindParam(':id', $id);
+        //$pdost->bindParam(':id', $id);
         $count = $pdost->execute();
         return $count;
     }
+ 
     public function updateUser($id, $email, $password, $db){
         $sql = "UPDATE users SET email = :email, password = :password WHERE id = :id";
         $pdost = $db->prepare($sql);

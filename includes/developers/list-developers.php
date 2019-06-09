@@ -29,6 +29,7 @@ foreach($list as $profile) {
             <div class="card-body text-center">
                 <a href="../developers/profile.php?id='.$profile->id.'"><h4>'.ucfirst($fName). ' '. ucfirst($lName).'</h4></a>
                 <p class="mt-n1 mb-3 mentor-title">'.$profile->position.'</p>
+                <a data-id="'.$profile->id.'" class="add-friend">Add Friend</a>
                 <hr>
                 <h6 class="mentor-num mb-1">Friends</h6>
                 <span>1000</span>

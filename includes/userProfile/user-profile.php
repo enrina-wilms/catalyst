@@ -261,7 +261,9 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 			<!--FRIENDS REQUEST SIDEBAR-->
 			<h5 class="sidebar-h5">Friend Requests</h5>
+			
 			<div class="sidebar-right-height">
+			<?php require_once '../friendslist/listFriends.php'; ?>
 			</div>
 
 			<!--APPRENTICE SIDEBAR-->

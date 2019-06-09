@@ -6,7 +6,6 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 require_once MODELS_STATUS_PATH . "/status.php";
 
 
-	
 	$query = "SELECT * FROM profiles WHERE user_id = 3";
 		
 	$db = Database::getDb();
