@@ -1,3 +1,3 @@
 <?php
 
-header("location: includes/login/trial.php");  
+header("location: includes/login/landing.php");  

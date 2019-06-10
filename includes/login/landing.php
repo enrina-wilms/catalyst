@@ -25,13 +25,28 @@ require_once "../../config.php";
 	<div class="container login-container h-100 pt-4">
 		<h1 class="text-center">CATALYST</h1>
 		<div class="row">
-			<div class="col-md-6 login-form">
-				<h3>Login</h3>
-				<?php require_once 'login.php'; ?>
+			<div class="col-md-6 login-form login-form-right">
+				<div class="card login-card">
+					<div class="card-header login-header text-center">
+
+						<h3>LOGIN</h3>
+					</div>
+					<div class="card-body">
+						<?php require_once 'login.php'; ?>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-6 login-form-signup">
-				<h3>Sign Up</h3>
-				<?php require_once 'register.php'; ?>
+				
+				<div class="card login-card">
+					<div class="card-header login-header text-center">
+
+						<h3>SIGNUP</h3>
+					</div>
+					<div class="card-body">
+						<?php require_once 'register.php'; ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
