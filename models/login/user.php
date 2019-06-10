@@ -11,17 +11,15 @@ class user
         return $count;
     }
     public function login($email, $password, $db){
-        $sql = "SELECT id,password FROM users WHERE email = :email AND password=:password";
+        $sql = "SELECT id,password FROM users WHERE email = :email";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(":email", $email);
         $pdost->execute();
-
-        //echo  password_hash($password, 1);
-
         if ($pdost->rowCount() > 0) { //0 or 1 boolean value
             $result = $pdost->fetch(PDO::FETCH_OBJ);
-            if(password_verify($password,$result->password){
-                
+            if(password_verify($password,$result->password)){
+                $_SESSION['uId'] = $result->id;
+                return true;
             }
         } else {
             return false;
@@ -40,27 +38,31 @@ class user
     public function getUserById($id, $db){
         $sql = "SELECT * FROM users WHERE id = :id";
         $pdost = $db->prepare($sql);
-        $pdost = bindParam(':id', $id);
-        $count = $pdost->execute();
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        $count = $pdost->fetch(PDO::FETCH_OBJ);
         return $count;
     }
     public function getAllUsers($db){
         $sql = "SELECT * FROM users";
         $pdost = $db->prepare($sql);
         $pdost->execute();
-        $count = $pdost->fetchAll(PDO::Fetch_OBJ);
+        $count = $pdost->fetchAll(PDO::FETCH_OBJ);
         return $count;
     }
-    public function deleteUser($id, $db){
-        $sql = "DELETE FROM users WHERE id = :id";
+    public function deleteUser($db){
+        $sql = "DELETE FROM users, profiles, experiences Using users INNER JOIN profiles ON users.id  = profiles.user_id  
+        INNER JOIN experiences ON experiences.profile_id = profiles.id WHERE users.id = 1";
         $pdost = $db->prepare($sql);
-        $pdost->bindParam(':id', $id);
+        //$pdost->bindParam(':id', $id);
         $count = $pdost->execute();
         return $count;
     }
+ 
     public function updateUser($id, $email, $password, $db){
         $sql = "UPDATE users SET email = :email, password = :password WHERE id = :id";
         $pdost = $db->prepare($sql);
+        $pdost->bindParam(':id', $id);
         $pdost->bindParam(':email', $email);
         $enc_password = password_hash($password, 1);
         $pdost->bindParam(':password', $enc_password);

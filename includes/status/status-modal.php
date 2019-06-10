@@ -9,15 +9,15 @@ $dbcon = Database::getDb();
 if(isset($_POST['addStatus'])){
 	$message=filter_var($_POST['content'], FILTER_SANITIZE_STRING);
 	//$content = $_POST['content'];
-	date_default_timezone_set("America/New_York");
+	/*date_default_timezone_set("America/New_York");
 	$status_date = date("Y/m/d");
-	$status_time = date("h:i:sa");
+	$status_time = date("h:i:sa");*/
     $user_id=6;
 
 	$db = Database::getDb();
     $s = new Status();
    
-	$c = $s->addStatus($message, $status_date, $status_time, $user_id, $db);
+	$c = $s->addStatus($message, $user_id, $db);
 	//header("Location: " . $includepath ."blogs/bloglistAdmin.php");
 }
 ?>

@@ -49,6 +49,7 @@ $('#requestForm').on('submit', function() {
     });
 });
 
+<<<<<<< HEAD
 $('.add-friend').on('click', function(){
     $.ajax({
         url: 'chat.php',
@@ -61,4 +62,6 @@ $('.add-friend').on('click', function(){
     });
 });
 console.log(window.location.search.substr(1).charAt());
+=======
+>>>>>>> c92120730fe59d0dd6dc995669293037fee817cd
 

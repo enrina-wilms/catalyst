@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 require_once '../../config.php';
 
@@ -13,7 +11,7 @@ $isValid = true;
 
 $email = $password = "";
 
-    print_r( $_POST );
+    //print_r( $_POST );
     
     if(isset($_POST['login']))
     {
@@ -35,33 +33,43 @@ $email = $password = "";
         $login = new user();
         $loginUser = $login->login($email, $password, $db);
 
-        echo 'here';
-        echo 'LU: '.$loginUser;
-        die();
+        /*echo 'here';
+        echo 'LU: '.$loginUser;*/
+        
         if($loginUser){
-            echo "<p class = 'addUser'> Welcome! </p>";
+            header( "Location: ../homepage/homepage.php");
         }
     }
 }
 //$_SESSION['id'];
-?>  
-<form action="" method="POST">
-<h2>Login</h2>
-Email:<input class="userInput" type="text" name="email"/>
-<span id="emailErr" style="color:red;">
-    <?php
-        if(isset($emailErr)) {
-            echo $emailErr;
-        }
-    ?>
-</span>
-Password:<input class="userInput" type="password" name="password"/>
-<span id="passErr" style="color:red;">
-    <?php
-        if(isset($passErr)) {
-            echo $passErr;
-        }
-    ?>
-</span>
-<input id="loginSubmit" type="submit" name="login" value="Login">
-</form>
+?>
+<!--
+        <div class="col-md-6 align-self-center"> center-div
+        <h2 class="loginForms">Login</h2>
+-->
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input id="loginEmail" class="userInput form-control" type="text" name="email"/>
+                    <span id="emailErr" style="color:red;">
+                        <?php
+                            if(isset($emailErr)) {
+                                echo $emailErr;
+                            }
+                        ?>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPass">Password:</label>
+                   <input id="loginPass" class="userInput form-control" type="password" name="password"/>
+                    <span id="passErr" style="color:red;">
+                        <?php
+                            if(isset($passErr)) {
+                                echo $passErr;
+                            }
+                        ?>
+                    </span>
+                </div>
+                <input class="btn btn-dark login-btn-login" id="loginSubmit" type="submit" name="login" value="Login">
+            </form>
+<!--        </div>-->

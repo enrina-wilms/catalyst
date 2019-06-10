@@ -5,7 +5,7 @@ session_start();
 // Supposed to unset all of the session variables
 //$_SESSION = array();
 
-session_destory();
+session_destroy();
 
 header("location: login.php");
 
