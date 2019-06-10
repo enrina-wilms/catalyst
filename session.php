@@ -10,8 +10,8 @@ session_start();
 $db = Database::getDb();
 $r = new user();
 $a = $r->getLatestUser($db);
-
 $_SESSION['uId'] = $a->id;
+
 $db = Database::getDb();
 $profileObj = new Profile();
 $profiles = $profileObj->getProfileByUserId(@$_SESSION['uId'], $db);

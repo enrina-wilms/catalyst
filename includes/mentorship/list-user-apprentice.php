@@ -1,10 +1,11 @@
 <?php
+require_once '../../session.php';
 require_once '../../models/database.php';
 require_once '../../models/mentorship/mentors.php';
 
 $dbcon = Database::getDb();
 $apprentice= new Mentors();
-$apprentice = $apprentice->listApprentice($dbcon, 7);
+$apprentice = $apprentice->listApprentice($dbcon, $_SESSION['spId']);
 
 @session_start();
 $friendId = '';
