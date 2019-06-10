@@ -153,39 +153,17 @@ require_once MODELS_STATUS_PATH . "/status.php";
 -->
 								What's on your mind <?= $profile->fname ?>, Share It!
 							</button>
+							
 							<?php require_once "../../includes/status/status-modal.php";?>
 
 						</div>
 					</h5>
+<<<<<<< HEAD
 					
+=======
+>>>>>>> ce5554f6c4bc5b5569ade10497ecaf62aefd7c09
 					<?php foreach($statuss as $status){
-							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' . 
-								'<div class="comment-section">'.
-								'<label>Comment: </label>'.
-								'<form action = "" method = POST >'.
-									'<input type="hidden" name= "status_id " value ="' . $status->id . '" />'.
-									'<input type="text" class="form-control" name="comment" />'.
-								'</form>';
-								$c = new Comment();
-								$statusComments =  $c->getCommentsByStatusId($ststus->id, Database::getDb());
-								//var_dump($statusComments);
-								if($statusComments)
-								{
-									echo '<ul class="list-group list-group-flush comment-list">';
-									foreach($statusComments as $statusComment)
-									{
-										//echo $blogcomment;
-											echo '<li class="list-group-item comment">' . $statusComment->comment . '</li>';
-									}
-									echo '</ul></div></div>';
-								}
-								else
-								{
-									echo '</div></div>' ;
-								}
-
-						} 
-					?>
+							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' ; } ?>
 
 				</div>
 				
