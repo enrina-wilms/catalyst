@@ -20,7 +20,7 @@ class Comment
     }
 
 	//adding Comment
-	public function addComments($comment, $status_id, $profile_id,  $db){
+	public function addComments($comment, $status_id, $profile_id, $db){
 			
 		$query = "INSERT INTO comments(comment, status_id, profile_id)
 		VALUES (:comment, :status_id, :profile_id)";

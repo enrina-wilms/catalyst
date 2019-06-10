@@ -18,6 +18,13 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 	$s = new Status();
 	$statuss =  $s->getAllStatus($db);
 
+	$c=new Comment();
+	$profile_id=7;
+
+	if(isset($_POST['comment']))
+	{
+		$c->addComments($_POST['comment'], $_POST['status_id'], $profile_id,  $db); 
+	}
 	
 	 $fName = $profile->fname;
 	 $lName = $profile->lname;
@@ -84,11 +91,11 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 					'<div class="comment-section">'.
 					'<label>Comment: </label>'.
 					'<form action = "" method = POST >'.
-						'<input type="hidden" name= "status_id " value ="' . $status->id . '" />'.
+						'<input type="hidden" name= "status_id" value ="' . $status->id . '" />'.
 						'<input type="text" class="form-control" name="comment" />'.
 					'</form>';
-					/*$c = new Comment();
-					$statusComments =  $c->getCommentsByStatusId($ststus->id, Database::getDb());
+					$c = new Comment();
+					$statusComments =  $c->getCommentsByStatusId($status->id, Database::getDb());
 					//var_dump($statusComments);
 					if($statusComments)
 					{
@@ -101,9 +108,9 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 						echo '</ul></div></div>';
 					}
 					else
-					{*/
+					{
 						'</div></div>' ;
-					//}
+					}
 
 			} 
 		?>
