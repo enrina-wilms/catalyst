@@ -1,4 +1,5 @@
 <?php
+require_once '../../session.php';
 require_once '../../config.php';
 require_once 'header.php';
 
@@ -46,9 +47,6 @@ require_once INCLUDES_VALIDATION_PATH . "/create-form-submit.php";
 //	exit();
 //}
 //
-
-
-
 ?>
 
 <br>

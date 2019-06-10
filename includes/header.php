@@ -59,7 +59,7 @@ require_once "../../config.php";
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="../userProfile/user-profile.php">My Profile</a>
 								<a class="dropdown-item" href="#">Privacy Settings</a>
-								<a class="dropdown-item" href="#">Logout</a>
+								<a class="dropdown-item" href="../login/logout.php">Logout</a>
 							</div>
 						</li>
 					</ul>

@@ -1,5 +1,4 @@
 <?php
-
 class user
 {
     public function approveAdmin($role, $id, $db){
@@ -67,6 +66,15 @@ class user
         $enc_password = password_hash($password, 1);
         $pdost->bindParam(':password', $enc_password);
         $count = $pdost->execute();
+        return $count;
+    }
+
+    public function getlatestUser($db){
+        $sql = "SELECT * FROM users ORDER BY date desc LIMIT 0,1";
+        $pdost = $db->prepare($sql);
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        $count = $pdost->fetch(PDO::FETCH_OBJ);
         return $count;
     }
 }
