@@ -1,5 +1,4 @@
 <?php
-
 class user
 {
     public function approveAdmin($role, $id, $db){
@@ -50,11 +49,10 @@ class user
         $count = $pdost->fetchAll(PDO::FETCH_OBJ);
         return $count;
     }
-    public function deleteUser($db){
-        $sql = "DELETE FROM users, profiles, experiences Using users INNER JOIN profiles ON users.id  = profiles.user_id  
-        INNER JOIN experiences ON experiences.profile_id = profiles.id WHERE users.id = 1";
+    public function deleteUser($db, $id){
+        $sql = "DELETE FROM users WHERE id = :id";
         $pdost = $db->prepare($sql);
-        //$pdost->bindParam(':id', $id);
+        $pdost->bindParam(':id', $id);
         $count = $pdost->execute();
         return $count;
     }
@@ -67,6 +65,15 @@ class user
         $enc_password = password_hash($password, 1);
         $pdost->bindParam(':password', $enc_password);
         $count = $pdost->execute();
+        return $count;
+    }
+
+    public function getlatestUser($db){
+        $sql = "SELECT * FROM users ORDER BY date desc LIMIT 0,1";
+        $pdost = $db->prepare($sql);
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        $count = $pdost->fetch(PDO::FETCH_OBJ);
         return $count;
     }
 }

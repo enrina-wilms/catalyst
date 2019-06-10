@@ -1,11 +1,12 @@
 <?php
+require_once '../../session.php';
 require_once 'mentor-request-modal.php';
 require_once '../../models/database.php';
 require_once '../../models/mentorship/mentors.php';
 
 $dbcon = Database::getDb();
 $mentors = new Mentors();
-$mentors = $mentors->getMentorRequestById($dbcon, 7);
+$mentors = $mentors->getMentorRequestById($dbcon, $_SESSION['spId']);
 
 foreach($mentors as $mentor){
     $fullName = ucfirst($mentor->apprentice_fname) .' '. ucfirst($mentor->apprentice_lname);
@@ -21,7 +22,7 @@ foreach($mentors as $mentor){
             </div>
         </div>
         <div class="col-sm-10">
-            <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
+            <a href=../developers/profile.php?id='.$mentor->profile_id.'><h6 class="profile-name-mentor text-left">'.$fullName.'</h6></a>
         </div>
     </div>
     <div class="row">

@@ -1,10 +1,15 @@
 <?php
 require_once '../../config.php';
 require_once 'header.php';
+require_once '../../session.php';
 require_once MODELS_PATH . "/database.php";
 require_once MODELS_PROFILE_PATH . "/user-profile.php";
 require_once MODELS_STATUS_PATH . "/status.php";
 require_once MODELS_COMMENT_PATH . "/comment.php";
+
+echo $_SESSION['spId'];
+echo $_SESSION['sfname'];
+echo $_SESSION['slname'];
 
 
 	$query = "SELECT * FROM profiles WHERE user_id = 3";

@@ -1,5 +1,5 @@
 <?php
-
+require_once '../../session.php';
 require_once '../../models/database.php';
 require_once '../../models/chat/Chat.php';
 
@@ -18,13 +18,13 @@ if(isset($_POST['method'])){
         }else{
             //add the messages inside the echo here
             foreach($messages as $message){
-                if($message->sender == 7 /*active user*/ && $message->receiver == $friendId){
+                if($message->sender == $_SESSION['spId'] /*active user*/ && $message->receiver == $friendId){
                     echo
                     '<div class="row chat-user mt-2 mb-2 mr-3">
                     <span class="chat-msg">' . $message->message . '</span>
                     </div>';
                 }
-                if($message->sender == $friendId  && $message->receiver == 7){
+                if($message->sender == $friendId  && $message->receiver == $_SESSION['spId']){
                     echo
                     '<div class="row chat-friend mt-2 mb-2 mr-3 ml-1">
                     <span class="chat-msg">' . $message->message . '</span>
@@ -35,7 +35,7 @@ if(isset($_POST['method'])){
     }else if($method === 'throw'){
         $message = trim($_POST['message']);
 
-        $chat->throwMessage($dbcon, 7, $friendId, $message);
+        $chat->throwMessage($dbcon, $_SESSION['spId'], $friendId, $message);
     }
 
 }

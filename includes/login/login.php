@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once '../../session.php';
 require_once '../../config.php';
 
 require_once MODELS_PATH . "/database.php";
@@ -32,7 +32,7 @@ $email = $password = "";
         $db = Database::getDb();
         $login = new user();
         $loginUser = $login->login($email, $password, $db);
-
+            
         /*echo 'here';
         echo 'LU: '.$loginUser;*/
         

@@ -129,6 +129,22 @@ class Profile
 		
 	}
 
+	//getting the profile id
+	public function getProfileByUserId($id, $db){
+		
+		$query = "SELECT * FROM profiles WHERE user_id = :id";
+		$pdost = $db->prepare($query);
+		
+		//bindParam = Binds a parameter to the specified variable name
+		$pdost->bindParam(':id', $id);
+		$pdost->execute();
+		
+		$profile = $pdost->fetch(PDO::FETCH_OBJ);
+		
+		return $profile;
+	}
+	
+
 	//updating mentor status
 	public function updateMentorStatus($db, $user_id, $mentorship_status){
 		$query = "UPDATE profiles
