@@ -21,11 +21,15 @@ require_once '../../config.php';
     <body>
     <div class="container">
         <div class="row">
-            <?php
+			
+			
+			<?php
             require_once 'login.php';
             require_once 'register.php';
 
-            ?>
+			?>
+			</div>
+            
         </div>
     </div>
     </body>
