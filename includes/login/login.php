@@ -47,7 +47,7 @@ $email = $password = "";
         <div class="col-md-6 align-self-center"> center-div
         <h2 class="loginForms">Login</h2>
 -->
-            <form action="" method="POST">
+            <form class="login-form-style" action="" method="POST">
                 <div class="form-group">
                     <label for="loginEmail">Email:</label>
                     <input id="loginEmail" class="userInput form-control" type="text" name="email"/>

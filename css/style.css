@@ -74,7 +74,15 @@ a:hover {
 }
 
 /*=================================== Login/Register ======================================================*/
-
+.login-card{
+	background: #fff;
+}
+.login-header{
+	background: #E74C3C!important;
+}
+.login-header h3{
+	color:#fff;
+}
 .login-container {
 	margin-top: 3%;
 	margin-bottom: 3%;
@@ -82,18 +90,20 @@ a:hover {
 
 .login-form {
 	padding: 3%;
-	background: #fff;
+/*	background: #fff;*/
 }
 
+/*
 .login-form h3 {
 	text-align: center;
 	color: #333;
 }
+*/
 
 .login-form-signup {
-	color:#fff;
+/*	color:#fff;*/
 	padding: 3%;
-	background: #E74C3C;
+/*	background: #E74C3C;*/
 }
 
 .login-form-signup h3 {
@@ -104,7 +114,18 @@ a:hover {
 .login-container form {
 	padding: 8%;
 }
-
+.login-btn-signup, .login-btn-login{
+	background: #E74C3C;
+	border: none;
+}
+.userInput{
+	border: 0;
+	border-bottom: 2px solid red;
+	border-radius: 0;
+}
+.login-form-right{
+	border-right: 2px solid #E74C3C;
+}
 /*====================================== Users ======================================================*/
 #userTable {
 	border: 1px solid black;
