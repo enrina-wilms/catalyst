@@ -7,6 +7,7 @@ class Friends{
         $pdost = $db->prepare($sql);
         $pdost->execute();
         $friends = $pdost->fetchAll(PDO::FETCH_OBJ);
+
         return $friends;
     }
 
@@ -20,9 +21,9 @@ class Friends{
         $pdost->bindParam('friends_lname', $lname);
         $pdost->bindParam(':friends_status', $friends_status);
         $friends = $pdost->execute();
+
         return $friends;
 
-        
     }
     public function getPendingFriendRequestsById($db, $id){
         $sql = "SELECT * FROM friends 
@@ -42,6 +43,7 @@ class Friends{
         $pdost->bindParam(':id', $id);
         $pdost->execute();
         $friends = $pdost->fetchAll(PDO::FETCH_OBJ);
+        
         return $friends;
     }
     public function getApprovedFriendRequestsById($db, $id){

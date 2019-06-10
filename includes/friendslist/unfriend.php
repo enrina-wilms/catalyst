@@ -4,7 +4,7 @@ require_once '../../config.php';
 require_once MODELS_PATH . "/database.php";
 require_once MODELS_FRIENDS_PATH . "/friendsList.php";
 
-if(isset($_POST['reject'])){
+if(isset($_POST['id'])){//was reject
     $id = $_POST['id'];
     $friends_status = $_POST['friends_status'];
 
