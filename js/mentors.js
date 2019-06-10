@@ -48,3 +48,17 @@ $('#requestForm').on('submit', function() {
         }
     });
 });
+
+$('.add-friend').on('click', function(){
+    $.ajax({
+        url: 'chat.php',
+        type: 'get',
+        data: { id: 2},
+        success: function(data){
+            chat.fetchMessages();
+            chat.entry.val('');
+        }
+    });
+});
+console.log(window.location.search.substr(1).charAt());
+

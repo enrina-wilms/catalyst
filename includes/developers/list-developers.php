@@ -1,5 +1,5 @@
 <?php  
-
+echo $_GET['id'];
 foreach($list as $profile) {	
 	
 //	//DATE WHEN THE profile WAS CREATED
@@ -30,7 +30,7 @@ echo '<div class="dev-container">'
 .'<p class="text-center">' . $profile->position . '</p>'
 .'<div class="card-body dev-card-body">'
 .'<hr>'
-.'<a href="#" class="">Add Friend</a>'
+.'<a href="?id='.$profile->id.'" class="add-friend">Add Friend</a>'
 .'<br>'
 .'<a href="#" class="">Message</a>'
 .'</div>'
