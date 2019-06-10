@@ -16,9 +16,11 @@ a {
 	text-decoration: none;
 	color: #353b48;
 }
-a:hover{
+
+a:hover {
 	text-decoration: none;
 }
+
 p {
 	margin: 0;
 	padding: 0;
@@ -57,50 +59,74 @@ a:hover {
 	background: #c0392b;
 	border-radius: 2px;
 }
-.card-body{
-	padding-top:0 !important;
+
+.card-body {
+	padding-top: 0 !important;
 }
-.modal-head{
+
+.modal-head {
 	background-color: #c0392b;
 }
-.modal-head h5, .modal-head button{
-	color: white;
-}
-/*=================================== Login/Register ======================================================*/
-.btn{
-	background-color:#ff5252;
-	color: white;
-}
-.container{
-	position: relative;
-	top: 250px;
-	margin: auto;
-	width: 50%;
-	padding: 10px;
-}
-.loginForms{
-	background-color:#ff5252;
+
+.modal-head h5,
+.modal-head button {
 	color: white;
 }
 
+/*=================================== Login/Register ======================================================*/
+
+.login-container {
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+.login-form {
+	padding: 3%;
+	background: #fff;
+}
+
+.login-form h3 {
+	text-align: center;
+	color: #333;
+}
+
+.login-form-signup {
+	color:#fff;
+	padding: 3%;
+	background: #E74C3C;
+}
+
+.login-form-signup h3 {
+	text-align: center;
+	color: #fff;
+}
+
+.login-container form {
+	padding: 8%;
+}
+
 /*====================================== Users ======================================================*/
-#userTable{
+#userTable {
 	border: 1px solid black;
 }
-#userTable td{
+
+#userTable td {
 	border: 1px solid black;
 }
+
 /*====================================== CHAT ======================================================*/
 .chat-box {
 	background-color: white;
 	height: 85vh;
 	padding: 0px;
 }
-.active-chat{
+
+.active-chat {
 	background-color: #E74C3C;
 	color: #fff;
 }
-.chat-m{
+
+.chat-m {
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -146,6 +172,7 @@ a:hover {
 .chat-message {
 	position: relative;
 }
+
 .chat-input {
 	margin-top: 5px;
 	padding-top: 5px;
@@ -154,14 +181,17 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 }
-.chat-users a{
+
+.chat-users a {
 	text-decoration: none;
 }
-.linka{
+
+.linka {
 	border-bottom: 1px solid #E74B3D;
 	padding: 10px;
 }
-.linka:hover{
+
+.linka:hover {
 	background-color: #F1F0F0;
 	color: black;
 	text-decoration: none;
@@ -196,18 +226,22 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
 /*===================================== MENTORSHIP ======================================================*/
-.apprentice-sub-link{
+.apprentice-sub-link {
 	font-size: 15px;
 	color: darkgray;
 }
-.apprentice-sub-link:hover{
+
+.apprentice-sub-link:hover {
 	color: #c0392b;
 	cursor: pointer;
 }
-.mentor-title{
+
+.mentor-title {
 	font-size: 13px;
 }
+
 .mentor-title {
 	font-size: 14px;
 	color: gray;
@@ -217,7 +251,8 @@ a:hover {
 .mentor-gray {
 	color: darkgray;
 }
-.mentor-gray:hover{
+
+.mentor-gray:hover {
 	color: #E74C3C;
 	cursor: pointer;
 }
@@ -231,10 +266,12 @@ a:hover {
 	font-weight: bold;
 	color: #E74C3C;
 }
+
 .mentor-profile:hover {
 	color: #2d2d2d;
 	text-decoration: none;
 }
+
 .profile-initials-mentor {
 	position: relative;
 	top: 15px;
@@ -244,10 +281,12 @@ a:hover {
 	text-transform: lowercase;
 	display: block;
 }
-.profile-name-mentor{
+
+.profile-name-mentor {
 	font-size: 17px;
 	margin-top: 12px;
 }
+
 .profile-avatar-circle-mentor {
 	margin: 0 auto;
 	width: 45px;
@@ -259,47 +298,63 @@ a:hover {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 }
-.fa-envelope, .fa-times, .fa-check{
+
+.fa-envelope,
+.fa-times,
+.fa-check {
 	font-size: 18px;
 	color: darkgray;
 }
-.pp{
-	font-size:12px;
+
+.pp {
+	font-size: 12px;
 	padding-left: 12px;
 	padding-right: 12px;
 }
-.request-accept, .request-decline, .request-msg{
-	font-size:12px;
+
+.request-accept,
+.request-decline,
+.request-msg {
+	font-size: 12px;
 	padding-left: 12px;
 	padding-right: 12px;
 }
-.request-accept:hover, .request-decline:hover{
+
+.request-accept:hover,
+.request-decline:hover {
 	background-color: #c0392b;
-	color:white;
+	color: white;
 }
-.request-accept{
+
+.request-accept {
 	background-color: white;
 }
-.request-decline{
+
+.request-decline {
 	background-color: lightgray;
 }
-.request-msg{
+
+.request-msg {
 	background-color: #c0392b;
 	color: white;
 
 }
-.fa-check{
+
+.fa-check {
 	font-size: 16px;
 }
-.error-message{
+
+.error-message {
 	font-size: 14px;
 	font-style: italic;
 	color: #636e72;
 	margin: 0;
 }
-span{
+
+span {
 	margin: 0;
 }
+
 /*==============================MAIN============================================================*/
 /*
 .main-profile{
@@ -377,14 +432,14 @@ span{
 
 .fa-plus,
 .fa-pen,
-.fa-trash{
+.fa-trash {
 	font-size: 12px;
 	color: #e74c3c;
 	padding: 0;
 }
 
 .main-h5 {
-	text-transform: capitalize!important;
+	text-transform: capitalize !important;
 	font-weight: 600;
 	margin-bottom: 0;
 }
@@ -398,8 +453,9 @@ span{
 .main-cardBody {
 	padding-bottom: 0;
 }
-p.card-text{
-	text-transform: capitalize!important;
+
+p.card-text {
+	text-transform: capitalize !important;
 }
 
 .main-action-button {
@@ -432,7 +488,7 @@ p.card-text{
 }
 
 .dev-h3 {
-	text-transform:capitalize!important;
+	text-transform: capitalize !important;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: center;
@@ -517,26 +573,33 @@ p.card-text{
 .dev-editBtn:hover {
 	color: #2d2d2d !important;
 }
-.dev-contact p{
-/*	font-weight: bold;*/
+
+.dev-contact p {
+	/*	font-weight: bold;*/
 	color: #636e72;
 }
-.dev-contact-icon{
+
+.dev-contact-icon {
 	color: #636e72;
 }
-.dev-contact-info{
+
+.dev-contact-info {
 	color: #E74C3C;
 }
-.dev-contact-info:hover{
+
+.dev-contact-info:hover {
 	color: #2d2d2d;
 }
-.dev-required{
+
+.dev-required {
 	color: red;
 	font-weight: bold;
 }
-.dev-card p{
-	text-transform:capitalize;
+
+.dev-card p {
+	text-transform: capitalize;
 }
+
 /*=================================HOMEPAGE=====================================================*/
 
 .homepage-profile {
