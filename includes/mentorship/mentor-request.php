@@ -3,7 +3,7 @@ require_once '../../models/database.php';
 require_once '../../models/mentorship/mentors.php';
 
 if(isset($_POST['apprentice'])){
-    $desc = substr($_POST['description'], 3,-5);
+    $desc = substr($_POST['desc'], 3,-5);
     $mentor_id = $_POST['mentor_id'];
     $apprentice_id = $_POST['apprentice_id'];
     $apprentice_fname = $_POST['apprentice_fname'];

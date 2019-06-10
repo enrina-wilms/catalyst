@@ -21,7 +21,7 @@ foreach($mentors as $mentor){
             </div>
         </div>
         <div class="col-sm-10">
-            <h6 class="profile-name-mentor text-left">'.$fullName.'</h6>
+            <a href=../developers/profile.php?id='.$mentor->profile_id.'><h6 class="profile-name-mentor text-left">'.$fullName.'</h6></a>
         </div>
     </div>
     <div class="row">

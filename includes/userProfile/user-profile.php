@@ -157,7 +157,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 						</div>
 					</h5>
-
+					
 					<?php foreach($statuss as $status){
 							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' . 
 								'<div class="comment-section">'.
