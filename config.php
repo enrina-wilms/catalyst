@@ -20,6 +20,7 @@
     define ("MODELS_LOGIN_PATH", realpath('../../models/login'));
     define ("MODELS_FRIENDS_PATH", realpath('../../models/friendsList'));
     define ("MODELS_STATUS_PATH", realpath('../../models/status'));
+    define ("MODELS_COMMENT_PATH", realpath('../../models/comment'));
     //css
     define ("CSS_PATH", realpath('../../css/'));
     define ("CSS_PATH1", realpath('../css/'));
