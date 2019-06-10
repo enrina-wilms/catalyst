@@ -51,7 +51,8 @@ class user
         return $count;
     }
     public function deleteUser($db){
-        $sql = "DELETE FROM users, profiles, experiences Using users INNER JOIN profiles ON users.id  = profiles.user_id  INNER JOIN experiences ON experiences.profile_id = profiles.id WHERE users.id = 1";
+        $sql = "DELETE FROM users, profiles, experiences Using users INNER JOIN profiles ON users.id  = profiles.user_id  
+        INNER JOIN experiences ON experiences.profile_id = profiles.id WHERE users.id = 1";
         $pdost = $db->prepare($sql);
         //$pdost->bindParam(':id', $id);
         $count = $pdost->execute();
