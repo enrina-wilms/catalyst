@@ -8,45 +8,6 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 require_once INCLUDES_VALIDATION_PATH . "/form-validation.php";
 require_once INCLUDES_VALIDATION_PATH . "/create-form-submit.php";
 
-//if(isset($_POST['createProfile'])) {
-//	
-//	if( $_FILES['image']['error'] == 0 )
-//    {
-//        
-//        // Convert the image to a base64 string
-//        $file = base64_encode( file_get_contents( $_FILES['profilePicture']['tmp_name'] ) );
-//        
-//    }
-//    else
-//    {
-//        
-//        $file = '';
-//        
-//    }
-//	
-//	$fname = $_POST['fname'];
-//	$lname = $_POST['lname'];
-//	$email = $_POST['email'];
-//	$contact = $_POST['phone'];
-//	$image = $file;
-//	$location = $_POST['location'];
-//	$position = $_POST['position'];
-//	$portfolio_url = $_POST['portfolio'];
-//	$user_id = 3;
-//		
-//	$db = Database::getDb();
-//	$statusObj = new Profile();
-//	$add = $statusObj->addProfile($fname, $lname, $email, $contact, $image, $location, $position, $portfolio_url, $user_id, $db);
-//
-//	if($add) {
-//		//DISPLAY STATUS
-//		header("Location:user-profile.php")	;
-//	} else{
-//		$message = "Problem posting a status!";
-//	}
-//	exit();
-//}
-//
 ?>
 
 <br>

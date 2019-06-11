@@ -18,7 +18,6 @@ if(isset($_POST['addExperience'])) {
 	$add = $experienceObj->addExperience($position, $company, $start_date, $end_date, $profile_id, $db);
 
 	if($add) {
-		//DISPLAY STATUS
 		header("Location:user-profile.php")	;
 	} else{
 		$message = "Problem posting a status!";

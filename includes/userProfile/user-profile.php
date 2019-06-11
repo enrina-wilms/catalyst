@@ -53,6 +53,7 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 	$firstChar = mb_substr($fName, 0, 1, "UTF-8");
 	$secChar = mb_substr($lName, 0, 1, "UTF-8");
 
+	//UPDATE USERPROFILE
 	if(isset($_POST['update'])) {
 		$id = $_POST['id'];
 		
@@ -108,16 +109,6 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 					<a href="mailto:<?=$profile->email?>" class="dev-contact-info"><?= $profile->email?></a>
 					<p><i class="fas fa-phone mr-2 dev-contact-icon mt-3"></i>Phone:</p>
 					<a href="tel:<?= $profile->contact?>" class="dev-contact-info"><?= $profile->contact?></a>
-					<hr>
-
-					<!--GITHUB ACCOUNT-->
-					<!--
-					<?php
-					require_once MODELS_PROFILE_PATH . "/github.php";
-					$username = 'enrina-wilms';
-					echo getGithub($username);
-					?>
--->
 				</div>
 				<div class="card-footer text-muted">
 					<form class="action-btn-style" action="../userProfile/edit-profile.php" method="post">
@@ -148,37 +139,22 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 
 				<!--FEEDS TAB CONTAINER-->
 				<div class="tab-pane fade" id="nav-feeds" role="tabpanel" aria-labelledby="nav-feeds-tab">
-
-
 					<h5 class="sidebar-h5" style="background:white;">Share Your Status
-
-
 						<hr />
 						<div class="status-container">
 							<button type="button" class="btn btn-block btn-lg text-left status-text-modal" data-toggle="modal" data-target="#exampleModalCenter">
-								<!--
-						<div class="status-avatar-circle">
-							<span class="status-initials">NU</span>
-						</div>
--->
 								What's on your mind <?= $profile->fname ?>, Share It!
 							</button>
-
 							<?php require_once "../../includes/status/status-modal.php";?>
-
 						</div>
 					</h5>
-
 					<div>
 						<?php require_once "../../includes/status/status-list.php";?>
 					</div>
 
 				</div>
-
 				<!--ABOUT TAB CONTAINER-->
-
 				<div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-
 					<!--EXPERIENCE SECTION-->
 					<div class="card main-profile-card">
 
@@ -193,13 +169,10 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 								</button>
 							</div>
 						</div>
-
 						<!--LIST OF EXPERIENCE-->
 						<?php require_once INCLUDES_EXPERIENCE_PATH . "/list-experience.php";?>
 						<br>
 					</div>
-
-
 					<!--EDUCATION SECTION-->
 					<div class="card main-profile-card">
 
@@ -214,27 +187,19 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 								</button>
 							</div>
 						</div>
-
 						<!--LIST OF EDUCATION-->
 						<?php require_once INCLUDES_EDUCATION_PATH . "/list-education.php";?>
 						<br>
 					</div>
 
 					<!--END OF EXPERIENCE AND EDUCATION -->
-
-
 				</div>
-
-
 				<!--FRIENDS TAB CONTAINER-->
 				<div class="tab-pane fade" id="nav-friends" role="tabpanel" aria-labelledby="nav-friends-tab">
-
-
 
 				</div>
 			</div>
 		</div>
-
 		<!--RIGHT SIDEBAR PROFILE-->
 		<div class="col-md-3 main-right-sidebar">
 
@@ -263,7 +228,6 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 <br>
 <?php require_once INCLUDES_USERPROFILE_PATH . "/experience-modal.php";?>
 <?php require_once INCLUDES_USERPROFILE_PATH . "/education-modal.php";?>
-<?php require_once INCLUDES_EXPERIENCE_PATH . "/edit-experience-modal.php";?>
 
 
 <?php

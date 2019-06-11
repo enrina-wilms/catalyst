@@ -27,15 +27,7 @@ if(isset($_POST['updateProfile'])) {
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
 	$mentorship_status = $_POST['mentor-status'];
-<<<<<<< HEAD
-//	$profile_id = 7;
-//	$user_id = 3;
-		
-=======
 
- 
-	 
->>>>>>> d8b6d44d0d23203c574310309d1378d978dc0d1c
 	$db = Database::getDb();
 	$profileObj = new Profile();
 	$update = $profileObj->updateProfile($profile_id, $fname, $lname, $email, $contact, $location, $position, $portfolio_url, $mentorship_status, $user_id, $db);

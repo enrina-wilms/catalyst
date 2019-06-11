@@ -10,12 +10,11 @@ class user
         return $count;
     }
     public function login($email, $password, $db){
-        $sql = "SELECT id,password,email FROM users WHERE email = :email";
+        $sql = "SELECT id,password FROM users WHERE email = :email";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(":email", $email);
-        $pdost->execute(array(":email"));
-
-        if ($pdost->rowCount() >= 0) { //0 or 1 boolean value
+        $pdost->execute();
+        if ($pdost->rowCount() > 0) { //0 or 1 boolean value
             $result = $pdost->fetch(PDO::FETCH_OBJ);
             if(password_verify($password,$result->password)){
                 $_SESSION['uId'] = $result->id;

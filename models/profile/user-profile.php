@@ -20,20 +20,6 @@ class Profile
 		
 	}
 	
-//	public function getProfileById($id, $db){
-//		
-//		$query = "SELECT * FROM profiles WHERE user_id = :user_id";
-//		$pdost = $db->prepare($query);
-//		
-//		//bindParam = Binds a parameter to the specified variable name
-//		$pdost->bindParam(':user_id', $id);
-//		$pdost->execute();
-//		
-//		$profile = $pdost->fetch(PDO::FETCH_OBJ);
-//		
-//		return $profile;
-//		
-//	}
 
 	//getting all the profile created and save on the database
 	public function getAllProfile($db){

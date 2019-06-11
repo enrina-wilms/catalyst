@@ -30,7 +30,6 @@ echo $_SESSION['slname'];
 	$statuss =  $s->getAllStatus($db);
 
 	$c=new Comment();
-//	$profile_id=9;
 	$p = new Profile();
 	if(isset($_POST['comment']))
 	{
@@ -60,11 +59,6 @@ echo $_SESSION['slname'];
 							<span class="profile-initials"><?php echo $firstChar . $secChar ?></span>
 						</div>
 					</div>
-
-
-					<!-- BEFORE CIRCLE -->
-
-					<!--					<div id="circle"></div>-->
 				</div>
 				<div class="card-body text-center">
 					<hr>
@@ -86,11 +80,6 @@ echo $_SESSION['slname'];
 				<hr />
 				<div class="status-container">
 					<button type="button" class="btn btn-block btn-lg text-left status-text-modal" data-toggle="modal" data-target="#exampleModalCenter">
-						<!--
-						<div class="status-avatar-circle">
-							<span class="status-initials">NU</span>
-						</div>
--->
 						What's on your mind <?= $profile->fname ?>, Share It!
 					</button>
 					<?php require_once "../../includes/status/status-modal.php";?>
@@ -100,9 +89,7 @@ echo $_SESSION['slname'];
 			<div>
 				<?php require_once "../../includes/status/status-list.php";?>
 			</div>
-
 		</div>
-
 		<!--RIGHT SIDEBAR PROFILE-->
 		<div class="col-md-3 homepage-right-sidebar">
 
@@ -110,8 +97,6 @@ echo $_SESSION['slname'];
 			<div class="sidebar-right-height">
 				<h5 class="sidebar-h5">Friend Suggestions</h5>
 			</div>
-
-
 			<!--MENTORS SUGGESTION SIDEBAR-->
 			<div class="sidebar-right-height">
 				<h5 class="sidebar-h5">Mentors Suggestions</h5>

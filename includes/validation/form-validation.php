@@ -1,6 +1,4 @@
 <?php
-// LIST OF FUNCTIONS CREATED TO VALIDATE EACH FORM FIELDS FOR NAME, EMAIL, PHONE, SUBJECT AND TEXTAREA
-
     //VALIDATION FOR NAME
     function valid_name($value){
         $nameCheck = "/^[a-zA-Z ]*$/"; 
@@ -9,7 +7,6 @@
     }
         return true;
     }
-    
     
     //VALIDATION FOR EMAIL
     function valid_email($value) {
