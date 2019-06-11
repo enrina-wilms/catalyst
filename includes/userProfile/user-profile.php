@@ -14,7 +14,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 require_once MODELS_COMMENT_PATH . "/comment.php";
 
 	$profile_id = $_SESSION['spId'];
-	$user_id = $_SESSION['uId'];
+	$user_id = $_SESSION['ruId'];
 	
 
 	// how to put the userId value on the sql query?

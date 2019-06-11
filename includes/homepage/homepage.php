@@ -11,8 +11,10 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 echo $_SESSION['sfname'];
 echo $_SESSION['slname'];
 */
-
-	$query = "SELECT * FROM profiles WHERE user_id = 3";
+	$profile_id = $_SESSION['spId'];
+	$user_id = $_SESSION['ruId'];
+	
+	$query = "SELECT * FROM profiles WHERE user_id = $user_id";
 		
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);
@@ -24,7 +26,7 @@ echo $_SESSION['slname'];
 	$statuss =  $s->getAllStatus($db);
 
 	$c=new Comment();
-	$profile_id=9;
+//	$profile_id=9;
 	$p = new Profile();
 	if(isset($_POST['comment']))
 	{
