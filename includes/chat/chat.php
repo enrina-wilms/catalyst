@@ -5,8 +5,11 @@ require_once '../../models/chat/Chat.php';
 
 @session_start();
 $dbcon = Database::getDb();
-$friendId = $_SESSION['id'];
-if(isset($_POST['method'])){
+
+if(isset($_SESSION['id'])){
+    $friendId = $_SESSION['id'];
+}
+if(isset($_POST['method']) && isset($_SESSION['id'])){
     $chat = new Chat();
     $method = trim($_POST['method']);
 

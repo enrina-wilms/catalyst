@@ -158,10 +158,6 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 						</div>
 					</h5>
-<<<<<<< HEAD
-					
-=======
->>>>>>> ce5554f6c4bc5b5569ade10497ecaf62aefd7c09
 					<?php foreach($statuss as $status){
 							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' ; } ?>
 
