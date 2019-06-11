@@ -7,8 +7,6 @@ require_once 'models/login/user.php';
 
 @session_start();
 
-
-
 $db = Database::getDb();
 $r = new user();
 $a = $r->getLatestUser($db);
