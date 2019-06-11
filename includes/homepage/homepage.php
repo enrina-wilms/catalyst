@@ -7,10 +7,10 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 require_once MODELS_STATUS_PATH . "/status.php";
 require_once MODELS_COMMENT_PATH . "/comment.php";
 
-echo $_SESSION['spId'];
+/*echo $_SESSION['spId'];
 echo $_SESSION['sfname'];
 echo $_SESSION['slname'];
-
+*/
 
 	$query = "SELECT * FROM profiles WHERE user_id = 3";
 		
@@ -23,6 +23,13 @@ echo $_SESSION['slname'];
 	$s = new Status();
 	$statuss =  $s->getAllStatus($db);
 
+	$c=new Comment();
+	$profile_id=7;
+	$p = new Profile();
+	if(isset($_POST['comment']))
+	{
+		$c->addComments($_POST['comment'], $_POST['status_id'], $profile_id,  $db); 
+	}
 	
 	 $fName = $profile->fname;
 	 $lName = $profile->lname;
@@ -85,30 +92,32 @@ echo $_SESSION['slname'];
 				</div>
 			</h5>
 			<?php foreach($statuss as $status){
-					echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' .
+					$profile = $p->getProfileById($status->profile_id, $db);
+					echo '<div class="status-container"><h5>'. $status->message .'<strong> by ' . $profile->fname.'</strong></h5></div>' .
 					'<div class="comment-section">'.
 					'<label>Comment: </label>'.
 					'<form action = "" method = POST >'.
-						'<input type="hidden" name= "status_id " value ="' . $status->id . '" />'.
+						'<input type="hidden" name= "status_id" value ="' . $status->id . '" />'.
 						'<input type="text" class="form-control" name="comment" />'.
 					'</form>';
-					/*$c = new Comment();
-					$statusComments =  $c->getCommentsByStatusId($ststus->id, Database::getDb());
+					$c = new Comment();
+					$statusComments =  $c->getCommentsByStatusId($status->id, Database::getDb());
 					//var_dump($statusComments);
 					if($statusComments)
 					{
 						echo '<ul class="list-group list-group-flush comment-list">';
 						foreach($statusComments as $statusComment)
 						{
+							$profile = $p->getProfileById($statusComment->profile_id, $db);
 							//echo $blogcomment;
-								echo '<li class="list-group-item comment">' . $statusComment->comment . '</li>';
+								echo '<li class="list-group-item comment">' . $statusComment->comment . '<strong id="response"> by ' . $profile->fname . '</strong></li>';
 						}
 						echo '</ul></div></div>';
 					}
 					else
-					{*/
+					{
 						'</div></div>' ;
-					//}
+					}
 
 			} 
 		?>
