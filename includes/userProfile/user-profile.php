@@ -71,7 +71,7 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 		$db = Database::getDb();
 
 		$profileObj  = new Profile();
-		$updateMentorStatus = $profileObj->updateMentorStatus($db, $profile_id, $mentorStatus);
+		$updateMentorStatus = $profileObj->updateMentorStatus($db, $user_id, $mentorStatus);
 
 		$referer = $_SERVER['HTTP_REFERER'];
 		header("Location: $referer");
