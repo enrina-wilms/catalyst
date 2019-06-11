@@ -1,4 +1,5 @@
 <?php
+require_once '../../session.php';
 require_once '../../config.php';
 require_once 'header.php';
 
@@ -14,6 +15,8 @@ if(isset($_POST['update'])) {
 }
 
 if(isset($_POST['updateProfile'])) {
+	$profile_id = $_SESSION['spId'];
+	$user_id = $_SESSION['ruId'];
 	
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
@@ -23,8 +26,8 @@ if(isset($_POST['updateProfile'])) {
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
 	$mentorship_status = $_POST['mentor-status'];
-	$profile_id = 7;
-	$user_id = 3;
+//	$profile_id = 7;
+//	$user_id = 3;
 		
 	$db = Database::getDb();
 	$profileObj = new Profile();

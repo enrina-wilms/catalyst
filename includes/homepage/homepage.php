@@ -1,11 +1,12 @@
 <?php
+require_once '../../session.php';
 require_once '../../config.php';
 require_once 'header.php';
-require_once '../../session.php';
 require_once MODELS_PATH . "/database.php";
 require_once MODELS_PROFILE_PATH . "/user-profile.php";
 require_once MODELS_STATUS_PATH . "/status.php";
 require_once MODELS_COMMENT_PATH . "/comment.php";
+require_once INCLUDES_STATUS_PATH . "/add-status.php";
 
 /*
 echo $_SESSION['spId'];
@@ -15,11 +16,11 @@ echo $_SESSION['slname'];
 	$profile_id = $_SESSION['spId'];
 	$user_id = $_SESSION['ruId'];
 	
-	$query = "SELECT * FROM profiles WHERE id = $profile_id";
+	$query = "SELECT * FROM profiles WHERE id = :id";
 	//echo $query;	
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);
-	$pdost->bindParam("id", $profile_id);
+	$pdost->bindParam(":id", $profile_id);
 	$profile = $pdost->execute();
 	$profile = $pdost->fetch(PDO::FETCH_OBJ);
 

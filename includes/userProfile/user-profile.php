@@ -18,10 +18,11 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 	
 
 	// how to put the userId value on the sql query?
-	$query = "SELECT * FROM profiles WHERE id = $profile_id";
-		
+	$query = "SELECT * FROM profiles WHERE id = :id";
+	//echo $query;	
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);
+	$pdost->bindParam(":id", $profile_id);
 	$profile = $pdost->execute();
 	$profile = $pdost->fetch(PDO::FETCH_OBJ);
 
@@ -30,7 +31,6 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 	$statuss =  $s->getAllStatus($db);
 
 	$c=new Comment();
-//	$profile_id=7;
 	$p = new Profile();
 	if(isset($_POST['comment']))
 	{
@@ -38,9 +38,6 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 	}
 
 	
-
-	//sam smith profile_id
-//	$id = 7;
 	$db = Database::getDb();
 	$experienceObj = new Experience();
 	$listExp = $experienceObj->userExperience($profile_id,$db);
@@ -71,7 +68,7 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 		$db = Database::getDb();
 
 		$profileObj  = new Profile();
-		$updateMentorStatus = $profileObj->updateMentorStatus($db, $profile_id, $mentorStatus);
+		$updateMentorStatus = $profileObj->updateMentorStatus($db, $user_id, $mentorStatus);
 
 		$referer = $_SERVER['HTTP_REFERER'];
 		header("Location: $referer");
@@ -98,7 +95,7 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 				<div class="card-body text-left dev-contact">
 					<hr>
 					<?php 
-					if($profile->mentorship_status == null){
+					if($profile->mentorship_status == 0){
 						echo '<a href="?mentorStatus=1" class="">Become a Mentor</a>';} 
 					?>
 					<a href="#" class="">Become my Apprentice</a>
