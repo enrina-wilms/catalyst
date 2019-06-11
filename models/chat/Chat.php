@@ -26,4 +26,27 @@ class Chat{
 		
 		return $message;
     }
+    public function listActiveChatReceiver($db, $id){
+            
+        $query = "SELECT * FROM profiles INNER JOIN chat ON profiles.id = chat.sender ORDER BY date desc";
+        $pdost = $db->prepare($query);
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        
+        $message = $pdost->fetchAll(PDO::FETCH_OBJ);
+        
+        return $message;
+    }
+    public function listActiveChatSender($db, $id){
+            
+        $query = "SELECT profiles.id, profiles.fname, profiles.lname FROM profiles INNER JOIN chat ON profiles.id = chat.sender GROUP BY profiles.id, profiles.fname, profiles.lname HAVING profiles.id = :id";
+        $pdost = $db->prepare($query);
+        $pdost->bindParam(':id', $id);
+        $pdost->execute();
+        
+        $message = $pdost->fetchAll(PDO::FETCH_OBJ);
+        
+        return $message;
+    }
+
 }

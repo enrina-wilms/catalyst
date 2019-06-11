@@ -64,14 +64,14 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 		$statusId = $profileObj->getProfileById($profile_id, $db);
 	}
 
-	//Mentorship Feature
+	//Mentorship Feature - update profile mentorship status
 	if(isset($_GET['mentorStatus'])){
 		$mentorStatus = $_GET['mentorStatus'];
 
 		$db = Database::getDb();
 
 		$profileObj  = new Profile();
-		$updateMentorStatus = $profileObj->updateMentorStatus($db, $user_id, $mentorStatus);
+		$updateMentorStatus = $profileObj->updateMentorStatus($db, $profile_id, $mentorStatus);
 
 		$referer = $_SERVER['HTTP_REFERER'];
 		header("Location: $referer");
@@ -98,7 +98,7 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 				<div class="card-body text-left dev-contact">
 					<hr>
 					<?php 
-					if($profile->mentorship_status == 0){
+					if($profile->mentorship_status == null){
 						echo '<a href="?mentorStatus=1" class="">Become a Mentor</a>';} 
 					?>
 					<a href="#" class="">Become my Apprentice</a>
