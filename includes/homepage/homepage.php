@@ -16,9 +16,10 @@ echo $_SESSION['slname'];
 	$user_id = $_SESSION['ruId'];
 	
 	$query = "SELECT * FROM profiles WHERE id = $profile_id";
-		
+	//echo $query;	
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);
+	$pdost->bindParam("id", $profile_id);
 	$profile = $pdost->execute();
 	$profile = $pdost->fetch(PDO::FETCH_OBJ);
 
