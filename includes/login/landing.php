@@ -23,7 +23,8 @@ require_once "../../config.php";
 
 <body>
 	<div class="container login-container h-100 pt-4">
-		<h1 class="text-center">CATALYST</h1>
+<!--		<h1 class="text-center">CATALYST</h1>-->
+		<img class="img-fluid mb-1 d-block mx-auto" src="../../images/logo-WORD.png" alt="" width="200px;">
 		<div class="row">
 			<div class="col-md-6 login-form login-form-right">
 				<div class="card login-card">

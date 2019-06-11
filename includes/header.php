@@ -25,7 +25,7 @@ require_once "../../config.php";
 	<header id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark header-bg">
 			<div class="container">
-				<a class="navbar-brand" href="../homepage/homepage.php">Catalyst</a>
+				<a class="navbar-brand" href="../homepage/homepage.php"><img src="../../images/logo.png" style="height:40px"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
