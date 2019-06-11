@@ -227,19 +227,8 @@ if(isset($_GET['id'])){
 		<!--RIGHT SIDEBAR PROFILE-->
 		<div class="col-md-3 main-right-sidebar">
 
-
-			<div class="card text-center">
-				<div class="card-header">
-					<h5 class="text-left">Mentorship Request</h5>
-				</div>
-				<div class="card-body text-left">
-
-				</div>
-				<div class="card-footer text-right">
-					<button id="confirmMentor" name="addEducation" type="submit" class="btn btn-danger btn-sm">Confirm</button>
-					<button id="confirmMentor" name="addEducation" type="submit" class="btn btn-danger btn-sm">Reject</button>
-				</div>
-			</div>
+			<!--APPRENTICE SIDEBAR-->
+			<h5 class="sidebar-h5">Apprentices</h5>
 
 
 		</div>

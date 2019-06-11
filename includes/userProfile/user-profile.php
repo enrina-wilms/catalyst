@@ -1,4 +1,5 @@
 <?php
+require_once '../../session.php';
 require_once '../../config.php';
 require_once 'header.php';
 require_once MODELS_PATH . "/database.php";
@@ -10,9 +11,14 @@ require_once INCLUDES_EXPERIENCE_PATH . "/delete-experience.php";
 require_once INCLUDES_EDUCATION_PATH . "/add-education.php";
 require_once INCLUDES_EDUCATION_PATH . "/delete-education.php";
 require_once MODELS_STATUS_PATH . "/status.php";
+require_once MODELS_COMMENT_PATH . "/comment.php";
 
+	$profile_id = $_SESSION['spId'];
+	$user_id = $_SESSION['uId'];
+	
 
-	$query = "SELECT * FROM profiles WHERE user_id = 3";
+	// how to put the userId value on the sql query?
+	$query = "SELECT * FROM profiles WHERE user_id = $user_id";
 		
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);
@@ -21,20 +27,27 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 	//*********STATUS***********/
 	$s = new Status();
-	$profile_id=6;
-	$statuss =  $s->getStatusByProfileId($profile_id, $db);
+	$statuss =  $s->getAllStatus($db);
+
+	$c=new Comment();
+//	$profile_id=7;
+	$p = new Profile();
+	if(isset($_POST['comment']))
+	{
+		$c->addComments($_POST['comment'], $_POST['status_id'], $profile_id,  $db); 
+	}
 
 	
 
 	//sam smith profile_id
-	$id = 7;
+//	$id = 7;
 	$db = Database::getDb();
 	$experienceObj = new Experience();
-	$listExp = $experienceObj->userExperience($id,$db);
+	$listExp = $experienceObj->userExperience($profile_id,$db);
 
 	$db = Database::getDb();
 	$educationObj = new Education();
-	$listEduc = $educationObj->userEducation($id,$db);
+	$listEduc = $educationObj->userEducation($profile_id,$db);
 
     $fName = $profile->fname;
 	$lName = $profile->lname;
@@ -48,7 +61,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 		
 		$db = Database::getDb();
 		$profileObj = new Profile();
-		$statusId = $profileObj->getProfileById($id, $db);
+		$statusId = $profileObj->getProfileById($profile_id, $db);
 	}
 
 	//Mentorship Feature
@@ -58,7 +71,7 @@ require_once MODELS_STATUS_PATH . "/status.php";
 		$db = Database::getDb();
 
 		$profileObj  = new Profile();
-		$updateMentorStatus = $profileObj->updateMentorStatus($db, 3, $mentorStatus);
+		$updateMentorStatus = $profileObj->updateMentorStatus($db, $user_id, $mentorStatus);
 
 		$referer = $_SERVER['HTTP_REFERER'];
 		header("Location: $referer");
@@ -153,18 +166,20 @@ require_once MODELS_STATUS_PATH . "/status.php";
 -->
 								What's on your mind <?= $profile->fname ?>, Share It!
 							</button>
-							
+
 							<?php require_once "../../includes/status/status-modal.php";?>
 
 						</div>
 					</h5>
-					<?php foreach($statuss as $status){
-							echo '<div class="status-container"><h5>'. $status->message .'</h5></div>' ; } ?>
+
+					<div>
+						<?php require_once "../../includes/status/status-list.php";?>
+					</div>
 
 				</div>
-				
+
 				<!--ABOUT TAB CONTAINER-->
-	
+
 				<div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
 
 					<!--EXPERIENCE SECTION-->
@@ -235,9 +250,9 @@ require_once MODELS_STATUS_PATH . "/status.php";
 
 			<!--FRIENDS REQUEST SIDEBAR-->
 			<h5 class="sidebar-h5">Friend Requests</h5>
-			
+
 			<div class="sidebar-right-height">
-			<?php require_once '../friendslist/listFriends.php'; ?>
+				<?php require_once '../friendslist/listFriends.php'; ?>
 			</div>
 
 			<!--APPRENTICE SIDEBAR-->

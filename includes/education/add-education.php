@@ -13,7 +13,7 @@ if(isset($_POST['addEducation'])) {
 	$description = $_POST['description'];
 	$start_date = $_POST['sDate'];
 	$end_date = $_POST['eDate'];
-	$profile_id = 7;
+	$profile_id = $_SESSION['spId'];
 		
 	$db = Database::getDb();
 	$experienceObj = new Education();

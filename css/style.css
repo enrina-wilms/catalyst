@@ -632,6 +632,14 @@ p.card-text {
 }
 
 /*=====================================STATUS================================*/
+
+#response{
+	right:0;
+	float: right;
+}
+
+
+
 .modal-dialog {
 	width: 800px !important;
 }
@@ -666,6 +674,23 @@ p.card-text {
 	font-style: italic;
 }
 
+.status-btn:hover {
+	background: white !important;
+	text-align: left;
+	color: gray;
+	font-style: italic;
+}
+
+.status-input {
+	padding: 10px;
+	background: #2d2d2d;
+}
+
+.status-text {
+	font-style: italic;
+	color: #767C8A;
+	font-size: 16px;
+}
 
 .status-avatar {
 	display: inline-block;
@@ -676,8 +701,7 @@ p.card-text {
 .status-container {
 	border: none;
 	border-left: 2px solid #343A40;
-	margin: 20px 20px 20px 0;
-	background-color: white;
+	margin: 20px 0;
 	/*	padding: 5px 10px 20px 10px;*/
 }
 
@@ -689,22 +713,183 @@ p.card-text {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-
 }
 
 .statusBtn {
 	background-color: transparent;
 	border: none;
 	color: #2d2d2d;
+	/*	padding: 10px;*/
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 14px;
 }
-#response{
-	right:0;
-	float: right;
+
+.status-edit-btn {
+	padding-right: 20px 20px 20px 0;
 }
+
+.status-actn-btn {
+	float: left;
+}
+
+.status-action-btn {
+	background: #dfdfdf;
+	text-align: center;
+}
+
+/*
+.card-header {
+	border: none !important;
+	background: #f5f6fa;
+	color: #2d2d2d;
+}
+*/
+
+.status-card-body {
+	padding: .5rem 0 !important;
+}
+
+.status-card-body > span {
+	padding-bottom: 0 !important;
+}
+
+/*
+.card-footer {
+	padding: 0 !important;
+}
+*/
+
+.status-content {
+	font-size: 14px;
+	display: block !important;
+	text-align: justify !important;
+	word-wrap: break-word;
+	padding: 0 20px;
+}
+
+.status-content p {
+	padding-bottom: 0 !important;
+}
+
+.status-content-cont {
+	padding-top: 60px;
+	display: block;
+}
+
+.fa-comments,
+.status-delete,
+.fa-user-edit,
+.fa-thumbs-up,
+.fa-share-square {
+	color: white;
+	font-size: 14px;
+	color: #989898;
+	text-align: center
+}
+
+.add-icon {
+	color: red;
+	font-size:
+}
+
+::placeholder {
+	color: grey;
+	font-style: italic;
+}
+
+.status-date {
+	display: block;
+	/*	padding-left: 50px;*/
+	color: grey;
+	font-size: 12px;
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.status-userName {
+	margin-right: 60px;
+	color: #40424C;
+	font-weight: 500;
+	margin: 0;
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
+.status-userInfo {
+	float: left;
+}
+
+.status-body {
+	padding: 15px;
+	border-top: 2px solid #FBC531;
+	border-bottom-style: none !important;
+}
+
+.status-recent {
+	height: 550px;
+	overflow: auto;
+}
+
+.status-div {
+	margin: 0;
+	padding: 0;
+}
+
+.status-error {
+	display: block;
+}
+
+.status-div-name {
+	display: inline-block;
+}
+
+.status-avatar-circle {
+	float: left;
+	display: inline-block;
+	margin-right: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: #E74C3C;
+	text-align: center;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+
+.status-initials {
+	position: relative;
+	top: 12.5px;
+	font-size: 25px;
+	line-height: 25px;
+	color: #fff;
+	text-transform: lowercase;
+}
+
+.status-headbg {
+	background: #fff !important;
+	padding-bottom: 5px;
+}
+
+.status-settings {
+	color: #6C757D;
+	right: 0;
+	top: 5px;
+	position: absolute;
+}
+
+.comment-messages{
+	margin: 10px 0;
+	background: #f1f2f6;
+	padding: 10px;
+	border-radius: 50px;
+}
+.comment-name{
+	font-weight: bold;
+	color: #E74C3C;
+}
+
 /*======================================SIDEBAR======================================================*/
 .sidebar-h5 {
 	border-top: 2px solid #E74C3C;
