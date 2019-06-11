@@ -701,7 +701,10 @@ p.card-text {
 	display: inline-block;
 	font-size: 14px;
 }
-
+#response{
+	right:0;
+	float: right;
+}
 /*======================================SIDEBAR======================================================*/
 .sidebar-h5 {
 	border-top: 2px solid #E74C3C;

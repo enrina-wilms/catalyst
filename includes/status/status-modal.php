@@ -8,10 +8,6 @@ require_once MODELS_STATUS_PATH . "/status.php";
 $dbcon = Database::getDb();
 if(isset($_POST['addStatus'])){
 	$message=filter_var($_POST['content'], FILTER_SANITIZE_STRING);
-	//$content = $_POST['content'];
-	/*date_default_timezone_set("America/New_York");
-	$status_date = date("Y/m/d");
-	$status_time = date("h:i:sa");*/
     $user_id=6;
 
 	$db = Database::getDb();
