@@ -24,7 +24,7 @@ echo $_SESSION['slname'];
 	$statuss =  $s->getAllStatus($db);
 
 	$c=new Comment();
-	$profile_id=7;
+	$profile_id=9;
 	$p = new Profile();
 	if(isset($_POST['comment']))
 	{
@@ -80,7 +80,7 @@ echo $_SESSION['slname'];
 				<hr />
 				<div class="status-container">
 					<button type="button" class="btn btn-block btn-lg text-left status-text-modal" data-toggle="modal" data-target="#exampleModalCenter">
-<!--
+						<!--
 						<div class="status-avatar-circle">
 							<span class="status-initials">NU</span>
 						</div>
@@ -91,56 +91,29 @@ echo $_SESSION['slname'];
 
 				</div>
 			</h5>
-			<?php foreach($statuss as $status){
-					$profile = $p->getProfileById($status->profile_id, $db);
-					echo '<div class="status-container"><h5>'. $status->message .'<strong> by ' . $profile->fname.'</strong></h5></div>' .
-					'<div class="comment-section">'.
-					'<label>Comment: </label>'.
-					'<form action = "" method = POST >'.
-						'<input type="hidden" name= "status_id" value ="' . $status->id . '" />'.
-						'<input type="text" class="form-control" name="comment" />'.
-					'</form>';
-					$c = new Comment();
-					$statusComments =  $c->getCommentsByStatusId($status->id, Database::getDb());
-					//var_dump($statusComments);
-					if($statusComments)
-					{
-						echo '<ul class="list-group list-group-flush comment-list">';
-						foreach($statusComments as $statusComment)
-						{
-							$profile = $p->getProfileById($statusComment->profile_id, $db);
-							//echo $blogcomment;
-								echo '<li class="list-group-item comment">' . $statusComment->comment . '<strong id="response"> by ' . $profile->fname . '</strong></li>';
-						}
-						echo '</ul></div></div>';
-					}
-					else
-					{
-						'</div></div>' ;
-					}
-
-			} 
-		?>
+			<div>
+				<?php require_once "../../includes/status/status-list.php";?>
+			</div>
 
 		</div>
 
 		<!--RIGHT SIDEBAR PROFILE-->
 		<div class="col-md-3 homepage-right-sidebar">
-			
-		<!--FRIENDS SUGGESTION SIDEBAR-->
-		<div class="sidebar-right-height">
-		<h5 class="sidebar-h5">Friend Suggestions</h5>
-		</div>
-		
-		
-		<!--MENTORS SUGGESTION SIDEBAR-->
-		<div class="sidebar-right-height">
-		<h5 class="sidebar-h5">Mentors Suggestions</h5>
-		</div>	
-		<!--TUTORIALS/VIDEOS ADS SIDEBAR-->
-		<div class="sidebar-right-height">
-		<h5 class="sidebar-h5">Banner Ads</h5>
-		</div>
+
+			<!--FRIENDS SUGGESTION SIDEBAR-->
+			<div class="sidebar-right-height">
+				<h5 class="sidebar-h5">Friend Suggestions</h5>
+			</div>
+
+
+			<!--MENTORS SUGGESTION SIDEBAR-->
+			<div class="sidebar-right-height">
+				<h5 class="sidebar-h5">Mentors Suggestions</h5>
+			</div>
+			<!--TUTORIALS/VIDEOS ADS SIDEBAR-->
+			<div class="sidebar-right-height">
+				<h5 class="sidebar-h5">Banner Ads</h5>
+			</div>
 		</div>
 	</div>
 </div>
