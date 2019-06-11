@@ -12,7 +12,7 @@
 	$location = $_POST['location'];
 	$position = $_POST['position'];
 	$portfolio_url = $_POST['portfolio'];
-    $user_id = @$_SESSION['uId'];
+    $user_id = $uid;
     //FUNCTION AND VALIDATION FOR INPUT FIELDS
         
     //VALIDATION FOR NAME
