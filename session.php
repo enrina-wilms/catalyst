@@ -5,16 +5,24 @@ require_once 'models/database.php';
 require_once 'models/database.php';
 require_once 'models/login/user.php';
 
-session_start();
+@session_start();
+
+
 
 $db = Database::getDb();
 $r = new user();
 $a = $r->getLatestUser($db);
-$_SESSION['uId'] = $a->id;
+$_SESSION['ruId'] = $a->id;
+
+if(isset($_SESSION['uId'])){
+    $uid = $_SESSION['uId'];
+}else{
+    $uid = $_SESSION['ruId'];
+}
 
 $db = Database::getDb();
 $profileObj = new Profile();
-$profiles = $profileObj->getProfileByUserId(@$_SESSION['uId'], $db);
+$profiles = $profileObj->getProfileByUserId($uid, $db);
 
 @$_SESSION['spId'] = $profiles->id;
 @$_SESSION['sfname'] = $profiles->fname; 
