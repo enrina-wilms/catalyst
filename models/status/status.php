@@ -32,13 +32,13 @@ class Status
 	}
 	
 	//adding status
-	public function addStatus($message, $user_id, $db){
+	public function addStatus($message, $profile_id, $db){
 			
 		$query = "INSERT INTO statuss(message, profile_id)
-		VALUES (:message, :user_id)";
+		VALUES (:message, :profile_id)";
 		$pdost = $db->prepare($query);
 		$pdost->bindParam(':message', $message);
-		$pdost->bindParam(':user_id', $user_id);
+		$pdost->bindParam(':profile_id', $profile_id);
 		$status = $pdost->execute();
 		
 		return $status;
