@@ -18,7 +18,7 @@ require_once MODELS_COMMENT_PATH . "/comment.php";
 	
 
 	// how to put the userId value on the sql query?
-	$query = "SELECT * FROM profiles WHERE user_id = $user_id";
+	$query = "SELECT * FROM profiles WHERE id = $profile_id";
 		
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);

@@ -7,19 +7,21 @@ require_once MODELS_PROFILE_PATH . "/user-profile.php";
 require_once MODELS_STATUS_PATH . "/status.php";
 require_once MODELS_COMMENT_PATH . "/comment.php";
 
-/*echo $_SESSION['spId'];
+/*
+echo $_SESSION['spId'];
 echo $_SESSION['sfname'];
 echo $_SESSION['slname'];
 */
 	$profile_id = $_SESSION['spId'];
 	$user_id = $_SESSION['ruId'];
 	
-	$query = "SELECT * FROM profiles WHERE user_id = $user_id";
+	$query = "SELECT * FROM profiles WHERE id = $profile_id";
 		
 	$db = Database::getDb();
 	$pdost = $db->prepare($query);
 	$profile = $pdost->execute();
 	$profile = $pdost->fetch(PDO::FETCH_OBJ);
+
 
 	/****************STATUS******* */
 	$s = new Status();
